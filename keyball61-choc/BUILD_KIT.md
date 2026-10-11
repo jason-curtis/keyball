@@ -1,152 +1,189 @@
-# Keyball61 Choc — build kit & priced BOM
+# Keyball61 Choc — build kit, PCB and priced BOM
 
-Goal: a Keyball61 with **Kailh Choc spacing (18 × 17 mm)**, **low-profile, quiet, standard-weight linear switches**,
-the same 34 mm thumb trackball (PMW3360), OLEDs, per-key RGB, wired TRRS split — as close to the
-holykeebs Keyball61 (order #2353, Nov 2024) as possible.
+A Keyball61 converted to **Kailh Choc v1 at Choc spacing (18 × 17 mm)**, with **quiet, standard-weight
+low-profile linears**, keeping everything that makes a Keyball a Keyball:
+- the 34 mm PMW3360 thumb trackball (same ball case, same notch, same sensor board);
+- OLEDs, 71 SK6812MINI-E LEDs (per-key + underglow);
+- wired TRRS split, Pro Micro-footprint RP2040 controllers;
+- **the unchanged Keyball61 switch matrix and pinout**, so the stock Keyball61 QMK firmware runs as-is.
 
-Prices checked 2026-10-11, USD. Items marked **(est.)** could not be quoted live and need a final check at checkout.
+Prices checked 2026-10-11 in USD. **(est.)** marks figures that could not be quoted live.
+
+> **Status: v0.1, unbuilt prototype.** The PCBs are generated, routed and DRC-checked, but nobody has
+> fabricated one yet. Read §7 before ordering.
 
 ---
 
-## 1. Does a choc-spacing Keyball already exist?
+## 1. Why a new PCB: no Choc-spacing Keyball exists
 
-**No.** Findings:
-
-| Candidate | Spacing | Why it isn't the answer |
+| Candidate | Spacing | Verdict |
 |---|---|---|
-| Keyball39 / 44 / 61 / 61+ / Keyball+ (Yowkees, holykeebs) | 19 mm (measured on `keyball61_Right_KiCad`: columns 99→118→137→156…) | Choc sockets are offered, but only at MX pitch. holykeebs' own board finder lists Keyball as "standard 19 × 19". |
-| ~200 GitHub repos matching "keyball" | — | Firmware/keymaps/cases only. No choc-pitch PCB fork. |
-| torabo-tsuki LP **L** (64 keys, "like Keyball61") | **19 mm** (measured from its KiCad: sockets step 28→47→66 mm) | Not choc spacing. Only the 42–52-key MS/XS sizes are 17 mm. It also uses Choc v2, a 25 mm ball, ZMK, and AA batteries. |
-| Crosses V2 (Ergo Keyboards) | Choc v1, pitch unconfirmed | 54 keys max, dual ball, wireless only, sold out. Main-key PCB not published. |
-| holykeebs Lily58 Choc / Corne Choc | 18 × 17 ✔ | Pointing is the small Pimoroni module (sold out), not a 34 mm thumb ball. |
-| Klorball35 | 18 × 17 ✔ | Keyball-derived with PMW3360, but only 35 keys and a 25 mm ball. Gerbers only. |
-| cocot46-lp, Rollow, roBa, Drift, Ergohaven K:04, Charybdis | — | Mini ball, no ball, MX pitch, or no choc version. |
+| Keyball39 / 44 / 61 / 61+ / Keyball+ (Yowkees, holykeebs) | 19 mm (measured from the KiCad files) | Choc sockets are offered, but only at MX pitch. |
+| ~200 GitHub repos named "keyball" | — | Firmware, keymaps and cases only. None is a Choc-pitch PCB. |
+| torabo-tsuki LP **L** (64 keys) | **19 mm** (measured: sockets step 28→47→66 mm) | Only its 42–52-key MS/XS sizes are 17 mm. It also uses a 25 mm ball, ZMK and AA cells. |
+| Crosses V2 | Choc v1, pitch unconfirmed | 54 keys max, dual ball, sold out. |
+| holykeebs Lily58 / Corne Choc | 18 × 17 ✔ | No thumb trackball (only the small Pimoroni module, sold out). |
+| Klorball35 | 18 × 17 ✔ | 35 keys, 25 mm ball. |
 
-**Conclusion:** to get a real Keyball61 at choc pitch, we convert Yowkees' published KiCad source
-(`keyball61/design_data/keyball61_{Left,Right}_KiCad.zip`, GPL-3.0, so a fork is allowed) into a
-**Keyball61 Choc** PCB and fab it at JLCPCB. Everything else on the bill is off-the-shelf.
+So this folder forks Yowkees' GPL-3.0 KiCad source (`keyball61/design_data/*_KiCad.zip`) into a Choc
+version. The conversion is fully scripted; see [TOOLING.md](TOOLING.md).
 
-### PCB conversion scope (the one piece of real work)
-- Swap `CherryMX_MidHeight_Hotswap` for a Choc v1 hotswap (PG1350 / CPG135001S30) footprint, and re-grid the 61 keys to 18 × 17 mm.
-- Keep the Pro Micro footprint (`ProMicro_v2_for61`), OLED header, TRRS, reset switch, SK6812 MINI-E chain and matrix wiring **unchanged**. That way the stock Keyball61 QMK keyboard (`qmk_firmware/keyboards/keyball/keyball61`) runs with no matrix changes; only the LED positions in `info.json` move.
-- Keep the 34 mm ball cut-out and sensor-board mount from the original. The ball doesn't shrink, so the keys around it can't simply move inward; they need hand placement.
-- Regenerate the FR4 top/mid plates and acrylic middle/bottom DXFs to the smaller outline. The board gets about 6–10 % narrower per half.
-- Re-route the traces. This is most of the effort.
-- Fab-ready output: gerbers, BOM and CPL for JLCPCB, with SMT assembly of diodes + sockets optional.
+## 2. What changed vs. Keyball61
 
----
+- **Key grid:** 19.05 mm → **18 mm × 17 mm**.
+  - Column 5 and row 3 are the anchors. The **trackball notch, ball-PCB contact (J2) and thumb cluster keep their exact original geometry**, so the stock Keyball trackball case fits unchanged.
+  - The finger columns pull in toward the ball: up to 4.2 mm sideways and 6 mm vertically.
+- **Switch footprint:** MX hotswap → **Kailh Choc v1 hotswap (CPG135001S30)** on all 61 keys.
+  - Per-key LEDs sit under the Choc LED window, 4.7 mm south of key centre.
+- **Single-sided parts placement.** Sockets, diodes, LEDs and pull-ups are all on the solder side, so JLC can assemble each half as a one-sided job.
+  - Keyball's left PCB is mounted upside down, so its "solder side" is the file's F.Cu.
+- **Case:** M4 spacer holes → **M2** holes, re-placed into the Choc key gaps.
+  - They keep ≥1.9 mm from switch housings for screw heads and ≥2 mm from sockets for standoffs.
+  - New outlines and 2 mm acrylic bottom plates are included. The right plate fills the notch and carries the original ball-case screw holes.
+- **Board size:** the outline is regenerated from the Choc key cells and is about 10 % smaller.
+- **Routing:** fully re-routed (Freerouting), with GND pours on both layers, 0.25 mm signals, 0.5 mm power and 0.3 mm copper-to-edge.
+- **Unchanged:**
+  - every net: matrix, LED chain order, OLED/I²C, TRRS, the left/right jumpers and the ball connector;
+  - firmware;
+  - the trackball sensor board.
 
-## 2. Reuse from order #2353
+## 3. Files
 
-| Part | Reuse? | Notes |
-|---|---|---|
-| Ambients Silent Choc **Nocturnal 20g** × 10 | ✅ Yes | Choc v1. Use them on the 5 thumb keys of each half (very light thumbs are a common preference), or keep as spares. |
-| MBK low-profile keycaps, white 1U × 10 | ✅ Yes | Choc v1 stem, true choc size. Use on the thumbs, or as spares/homing. |
-| TRRS cable 80 cm | ✅ Yes, if you'll swap boards | Otherwise buy a second one ($5). |
-| Tenting feet | ✅ Yes, if swapping | Currently **sold out** at holykeebs. |
-| Sea Picro × 2, OLED × 2, PMW3360 sensor, 34 mm ball, ball case | ⚠️ Only by cannibalizing your daily driver | Keyball61 builds are usually soldered/socketed. The BOM below buys new ones so the old board stays usable. Reusing the controllers + OLEDs saves about $26. |
-| Outemu Silent Peach v3 (MX), Tai-Hao MX caps, acrylic plates, LEDs (soldered) | ❌ No | MX parts, or board-specific. |
-
----
-
-## 3. Switches — recommendation
-
-Wanted: quiet + low throw + linear + standard weight, Choc v1 so the MBK caps fit.
-
-| Pick | Switch | Force | Price | Notes |
-|---|---|---|---|---|
-| **⭐ Primary** | **Kailh Choc v1 Silent "Plum Blossom"** (MoErgo, ships from USA) | 45 gf linear | $18 / 20-pack | Silenced Choc v1, made for Glove80. US stock, no tariff. Cheapest per switch. https://www.moergo.com/products/ships-from-usa-kailh-choc-v1-silent-key-switches-golden-kiwi-cherry-blossom-plum-blossom-20-pack |
-| Runner-up | **Ambients Silent Choc "Bokeh"** (lowprokb, Canada) | 50 g linear | $9 / 10 | Same family as your Nocturnals, so the sound matches. Damped on press and release. 3.0 mm travel. https://lowprokb.ca/products/ambients-silent-choc-switches |
-| Lighter alt. | Ambients **Twilight** (holykeebs US or lowprokb) | 35 g linear | $9 / 10 | Closest to the light feel of the Silent Peach. |
-
-Avoid for this build:
-- **Choc v2** silent switches (Kailh Deep Sea Islet, Purple Iris): MX-cross stem, so no MBK caps and no FK MBK.
-- **Gateron KS-33** and **Lofree LP**: different footprint, won't fit Choc sockets.
-
-Count: 61 keys. With the 10 Nocturnals on the thumbs, you need 51 new switches plus spares.
-- **Primary:** 3 × 20-pack Plum Blossom gives 60 (63 with bonus spares). **$54**
-- If you'd rather not use the Nocturnals on the thumbs: 4 × 20-pack, **$72**.
-
----
-
-## 4. Keycaps (re-order from FK Keycaps)
-
-FK's custom builder (https://custom.fkcaps.com/custom) offers **MBK** in three "CHOC ONLY" variants: ABS PU shine-through, PBT, and PBT PU.
-- **Size:** MBK is 17.5 × 16.5 mm on a Choc v1 stem, so it fits the 18 × 17 pitch exactly.
-- **Profiles to avoid:** don't pick LPF/KLP. They're MX-stem and MX-sized.
-- **Price:** FK only shows it at checkout. The last public data point is about $1.05/key including shipping (54 keys → $63). Shipping is a $9 flat rate; delivery is 6–14 days.
-- **What to order:** recreate your legends on **MBK PBT**, 51 × 1U (all Keyball61 keys are 1U). The thumbs reuse your 10 white MBK caps. Order 61 if you want the thumbs legended too.
-
-Budget fallback: blank MBK/LDSA $3.50 per 10 from holykeebs/typeractive, about $21 for 60.
-
----
-
-## 5. Full BOM — "Keyball61 Choc", wired, both halves
-
-**Assumptions:**
-- Reuse 10 Nocturnals + 10 MBK caps on the thumbs.
-- Buy fresh controllers, OLEDs and trackball parts; your current board stays intact.
-- PCBs hand-soldered. JLC SMT assembly is optional, in the note under the table.
-
-| # | Part | Qty | Vendor | Unit | Line |
-|---|---|---|---|---|---|
-| 1 | Keyball61 Choc main PCB L+R (JLCPCB, 2-layer 1.6 mm, min qty 5 per design) | 5 ea. | jlcpcb.com | — | **~$45 (est.)** |
-| 2 | FR4 top/mid plates L+R (JLCPCB) | 5 ea. | jlcpcb.com | — | **~$30 (est.)** |
-| 3 | JLC shipping (DHL/FedEx, combined) | 1 | jlcpcb.com | — | **~$25 (est.)** |
-| 4 | Acrylic middle + bottom plates (laser cut, from regenerated DXFs) | 1 set | JLCPCB CNC/laser, or Ponoko | — | **~$40 (est.)** |
-| 5 | Kailh Choc v1 hotswap sockets (PG1350) | 70 (7 × 10) | typeractive.xyz | $1.50/10 | $10.50 |
-| 6 | 1N4148W SOD-123 diodes | 70 (7 × 10) | typeractive.xyz | $0.75/10 | $5.25 |
-| 7 | RP2040 Pro Micro (USB-C) — Sea Picro is discontinued | 2 | holykeebs.com | $8 | $16.00 |
-| 8 | Machine-pin headers/sockets for controllers | 2 sets | holykeebs.com | $3 | $6.00 |
-| 9 | OLED 128×32 | 2 | holykeebs.com | $5 | $10.00 |
-| 10 | Reset buttons | 2 | typeractive.xyz | $1.50/2 | $1.50 |
-| 11 | TRRS jacks PJ-320A (+ a few spares) | 4 | LCSC / AliExpress | ~$0.30 | **~$2 (est.)** |
-| 12 | SK6812 MINI-E LEDs (optional, 71) | 80 (8 × 10) | holykeebs.com | $2.80/10 | $22.40 |
-| 13 | 34 mm trackball (Perixx, black) | 1 | holykeebs.com | $15 | $15.00 |
-| 14 | Keyball trackball case (resin, 3 ceramic bearings) | 1 | holykeebs.com | $15 | $15.00 |
-| 15 | PMW3360 sensor board (see note) | 1 | AliExpress / Kivipallur breakout via JLC | — | **~$25 (est.)** |
-| 16 | **Switches**: Kailh Choc v1 Silent Plum Blossom 45 gf | 3 × 20-pack | moergo.com | $18 | $54.00 |
-| 17 | **Keycaps**: FK custom MBK PBT, 51 × 1U | 51 | custom.fkcaps.com | ~$1.05 | **~$54 + $9 ship (est.)** |
-| 18 | M2 spacers/screws, rubber feet | 1 set | Amazon / AliExpress | — | **~$10 (est.)** |
-| 19 | TRRS cable 80 cm (skip if reusing) | 1 | holykeebs.com | $5 | $5.00 |
-| | **Vendor shipping** (holykeebs, typeractive, MoErgo) | | | | **~$25 (est.)** |
-| | **Total** | | | | **≈ $430** |
-
-Ways to cut cost:
-- Reuse the Sea Picros and OLEDs from the old board: −$26.
-- Skip the RGB: −$22.
-- Use blank MBK caps instead of FK custom: −$42.
-- Lean build (all three of the above): **≈ $340**.
-
-Note on JLC SMT assembly: having JLC place the diodes and hotswap sockets adds roughly $30–60 in setup and parts. It removes the most tedious soldering.
-
-Note on the **PMW3360**: holykeebs no longer sells the sensor on its own, only inside Keyball kits. There are two routes:
-- Order the Kivipallur / Klorball35 sensor breakout, which has a JLC BOM/CPL (https://github.com/dr3san/Kivipallur).
-- Buy a PMW3360 module on AliExpress that matches the Keyball sensor-board pinout.
-
-Either way, confirm the pinout before ordering. If neither works out, the fallback is to email holykeebs. They sell the sensor as part of the Keyball kits, so they may sell one on its own.
-
-### Where to order (grouped)
-| Vendor | Items |
+| Path | What |
 |---|---|
-| **holykeebs.com** | 2× RP2040 Pro Micro, 2× headers, 2× OLED, 8× SK6812 MINI-E 10-pack, 34 mm ball (black), Keyball trackball case, (TRRS cable) |
-| **typeractive.xyz** | 7× Choc hotswap sockets 10-pack, 7× 1N4148W 10-pack, 1× reset switch 2-pack |
-| **moergo.com** | 3× Kailh Choc v1 Silent Plum Blossom 20-pack (US ship) |
-| **custom.fkcaps.com** | 51× MBK PBT custom-legend 1U |
-| **jlcpcb.com** | PCBs + FR4 plates + acrylic (+ optional SMT assembly). Gerbers come from the conversion. |
-| **LCSC / AliExpress** | PJ-320A TRRS jacks, PMW3360 module, M2 hardware |
+| `pcb/left/`, `pcb/right/` | KiCad 9 projects (`keyball61_choc_{left,right}.kicad_pcb`), with DRC rules |
+| `pcb/keyball61_choc.pretty/` | Choc v1 hotswap and M2 hole footprints |
+| `fab/{left,right}/` | **Order files:** gerber zip, JLC BOM, JLC CPL |
+| `case/` | 2 mm acrylic bottom plates (DXF) |
+| `tools/` | `convert.py` → `route.py` → `fab.py` / `plates.py` |
+| `renders/` | PNG previews |
 
 ---
 
-## 6. Alternatives if you'd rather not fab a PCB
+## 4. Ordering — what to buy, where
 
-1. **holykeebs Keyball61+ with Choc v2 sockets ($200, soldered).**
-   - Gets you low-profile switches today with full Keyball features and the 34 mm ball.
-   - Still 19 mm spacing.
-   - Needs Choc v2 silent switches (e.g. Kailh Deep Sea Islet 43 g, $6.50/10) and MX-stem low-profile caps.
-2. **holykeebs Lily58 Choc ($27 PCB kit + parts).**
-   - True 18 × 17, 58 keys.
-   - Gives up the thumb ball; the only pointing option is the Pimoroni module (sold out).
-3. **torabo-tsuki LP MS size.**
-   - 17 mm pitch, 25 mm ball, ZMK wireless.
-   - The MS size is marked untested by its designer, has fewer keys, and must be bought from Japan via BOOTH.
+### 4a. JLCPCB: PCBs + assembly (one order)
+
+Upload `fab/left/keyball61_choc_left_gerbers.zip` and `fab/right/…_gerbers.zip` as two designs. Settings:
+- 2 layers, 1.6 mm FR-4, HASL lead-free or ENIG;
+- any colour (black or white looks like the original);
+- qty 5;
+- **remove the order number** (or place it with "specify position").
+
+**PCB Assembly:** enable it with qty 2, using the BOM/CPL in each `fab/<side>/` folder.
+
+| Side to assemble | Left board: **Top** (the file's F.Cu is the solder side) · Right board: **Bottom** |
+|---|---|
+
+What JLC places:
+
+| Part | LCSC | Per kb | Note |
+|---|---|---|---|
+| Kailh Choc v1 hotswap socket CPG135001S30 | C5333465 | 61 | Extended part. **JLC stock is 0 today:** pre-order it through JLC "Parts Manager → Order Parts" before placing the PCBA order, or consign typeractive/holykeebs sockets. |
+| 1N4148W SOD-123 | C81598 | 71 | Basic part |
+| SK6812MINI-E | C5149201 | 71 | Extended part, 190k in stock. Reverse-mount into the PCB cut-outs: confirm orientation in JLC's DFM preview. |
+| 4.7 kΩ 0603 (I²C pull-ups) | C23162 | 4 | Basic part |
+| *Optional THT:* PJ-320A TRRS jack | C2884926 | 2 | JLC can do through-hole; you can also hand-solder it |
+| *Optional THT:* 2-pin reset tact switch | C139766 | 2 | |
+
+**Estimated cost** (JLC needs a live quote; 2 assembled + 3 bare boards per half):
+
+| | |
+|---|---|
+| PCBs, 2 designs × 5 | ~$35–50 |
+| PCBA: setup, stencil, extended-part fees, joints | ~$50–80 |
+| Placed parts (2 kb worth) | ~$20 |
+| Shipping + US tariff/handling | ~$25–40 |
+| **Total** | **≈ $130–190** (est.) |
+
+You get **two complete sets** of assembled boards, i.e. a spare keyboard's worth.
+
+### 4b. Bottom plates
+
+Have the two `case/*_bottom_2mm.dxf` files laser-cut in 2 mm acrylic, for example at JLCPCB CNC/laser,
+SendCutSend or Ponoko. **≈ $25–40** (est.).
+
+Hardware:
+- M2 × 4 mm F-F hex standoffs: 17;
+- M2 × 4 mm low-profile screws: 34;
+- rubber bumpers: ~8.
+
+An Amazon M2 assortment is **≈ $10**.
+
+### 4c. DigiKey cart (things JLC doesn't place)
+
+| Qty | Part | DigiKey PN | Unit | Line |
+|---|---|---|---|---|
+| 1 | Mill-Max 0.1" low-profile socket strip, 64-pin. Snap it into 4 × 12 for the controllers. | (mfr 315-43-164-41-003000) | $12.29 | $12.29 |
+| 2 | 4-pin female header for the OLEDs | S7002-ND | $0.42 | $0.84 |
+| 2 | Adafruit KB2040 (RP2040, Pro Micro footprint) | 5302 listing | $8.95 | $17.90 |
+| 2 | 6 × 3.5 mm 2-pin tact switch, reset (if not JLC). The footprint pitch is 6.5 mm: check the datasheet. | e.g. CKN12303-ND | $0.17 | $0.34 |
+| — | **Subtotal** | | | **$31.37** |
+
+DigiKey doesn't carry the following, so they go in §4d:
+- PMW3360 / LM19-LSI, SK6812MINI-E and the Kailh sockets (JLC places them anyway);
+- the 34 mm ball;
+- generic 0.91" OLEDs. DigiKey's Adafruit 4440 has a different pinout, so skip it.
+
+### 4d. Other vendors
+
+| Qty | Part | Vendor | Line |
+|---|---|---|---|
+| 1 | **Pre-soldered Keyball trackball sensor board** (PMW3360 + LM19-LSI lens, tested) | Shirogane Lab (JP), ¥4,800: https://shiroganelab.com/products/keyball-pre-soldered-trackball-sensor-lens-set. Stock is unclear, so check before ordering. | ~$32 + JP shipping |
+| 1 | L-shaped 7-pin Conthrough spring header (joins the ball board to J2) | Shirogane Lab (¥240, sometimes sold out), or ask holykeebs | ~$2 |
+| 1 | Keyball trackball case (resin, 3 ceramic bearings) | holykeebs.com | $15 |
+| 1 | 34 mm trackball (Perixx), black | holykeebs.com | $15 |
+| 2 | OLED 128×32 0.91" | holykeebs.com | $10 |
+| 3 | **Kailh Choc v1 Silent "Plum Blossom" 45 gf linear**, 20-pack | moergo.com (ships from US) | $54 |
+| 51 | **FK Keycaps custom MBK PBT**, 1U, your legends | custom.fkcaps.com | ~$54 + $9 ship (est.) |
+| — | holykeebs and MoErgo shipping | | ~$15 (est.) |
+
+Sensor board, DIY alternative:
+- Fab Yowkees' `keyball46/ball_design_data/Trackball_PCB_gerber.zip` at JLC (~$5).
+- Parts from DigiKey: TPS73601DBVR (296-18255-1-ND, **backordered to Nov 16**), 2 × TXS0102DCUR (296-21912-1-ND) and passives (10 µF ×3, 0.1 µF ×4, 37.4k, 63.4k, 3 × 10k, 39 Ω, 4 × 0 Ω), about $8.
+- PMW3360DM-T2QU + LM19-LSI from AliExpress, ~$15.
+- The VSSOP-8 level shifters are fiddly to hand-solder, so the pre-assembled board is the recommended route.
+
+### 4e. Reused from your holykeebs order #2353
+
+| Item | Use |
+|---|---|
+| 10 × Ambients Silent Choc **Nocturnal 20 g** | The 5 thumb keys (3 left + 2 right) plus the 2 inner keys, plus 3 spares. A light thumb is a common preference. |
+| 10 × white MBK 1U | Keycaps for those same 7 keys, plus spares |
+| TRRS cable 80 cm, tenting feet | Move them between boards, or buy a second cable ($5) |
+
+## 5. Totals
+
+| Block | Cost |
+|---|---|
+| JLCPCB PCB + assembly + shipping | ≈ $130–190 (est.) |
+| Bottom plates + M2 hardware | ≈ $35–50 (est.) |
+| DigiKey cart | $31 |
+| Sensor board + connector + case + ball | ≈ $65 + JP shipping |
+| OLEDs | $10 |
+| Switches | $54 |
+| Keycaps | ≈ $63 (est.) |
+| Misc shipping | ≈ $15 |
+| **Total** | **≈ $400–480**, for a spare set of assembled PCBs as well |
+
+## 6. Build steps (what's left for you to solder)
+
+1. **Controllers:**
+   - Solder the Mill-Max socket strips on the switch side.
+   - Fit the KB2040s with their pins.
+   - Same Pro Micro footprint as Keyball61.
+2. **OLED headers:** solder the 4-pin female header, then plug in the OLEDs. Add TRRS and reset too if you didn't have JLC do them.
+3. **Left/right jumpers:** bridge the `BACK_SIDE_ONLY` / `LEFT` solder jumpers exactly as in the Keyball61 build guide, steps 5 and 8. Their positions are unchanged relative to the controller.
+4. **Ball contact:** solder the L-shaped 7-pin Conthrough to J2 on the right half, then push the sensor board on and fit the ball case.
+5. **Case:** add standoffs and the bottom plate, then switches and caps.
+
+**Firmware:** the stock Keyball61 QMK keyboard (`qmk_firmware/keyboards/keyball/keyball61`). For RP2040 controllers, use holykeebs' QMK fork or a QMK converter build (`CONVERT_TO=kb2040`). The matrix, LED order and pins are unchanged.
+
+## 7. Before you order: check these
+
+- **Open both boards in KiCad 9 and look them over.** They are machine-generated. DRC is clean on errors (see `pcb/*/drc.rpt`), but nobody has reviewed them by eye yet.
+- **Optionally print the PCB at 1:1** and set a few Choc switches, MBK caps, the ball case and your hand on it.
+- **Ball case fit.** The notch and J2 are unchanged, but the bottom-row keys around the notch moved slightly. The ball case's outer shell isn't in Yowkees' repo, so check it physically or against the holykeebs case dimensions.
+- **Sockets at JLC.** Order C5333465 into your JLC parts library first.
+- **Thumb keys.** They keep Keyball's original positions and angles. The finger columns moved, so on the right half the thumbs end up ≈4 mm further inboard relative to the index column than on your MX board.
+- **TRRS jack.** The footprint is Keyball's MJ-4PP-9 / PJ-320A pattern. If JLC places C2884926, check its pin mapping in the DFM preview.
