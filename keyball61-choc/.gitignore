@@ -1,0 +1,11 @@
+# autorouter scratch (route.py / Freerouting)
+logs/
+freerouting.json
+*.dsn
+*.ses
+*.routing.kicad_pcb
+*.pass1*
+*.pass2*
+*.kicad_prl
+*-backups/
+fp-info-cache
