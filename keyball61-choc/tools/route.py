@@ -17,11 +17,13 @@ from convert import sexpr_end, top_level_forms  # noqa: E402
 MM = pcbnew.FromMM
 
 
-def routing_copy(src, dst):
+def routing_copy(src, dst, keep_tracks=False):
     """KiCad's Specctra exporter chokes on the Keyball logo footprints and on the custom
     (arrow-shaped) solder-jumper pads. Route a copy without logos and with plain rect jumper
     pads; the routed wires are then imported into the real board."""
     text = open(src).read()
+    if keep_tracks:  # second pass: keep the wiring, drop the GND pours
+        text = "".join(text[a:b_] for a, b_ in _spans_without(text, "zone"))
     out, i = [], 0
     for j, k in list(top_level_forms(text, "footprint")):
         out.append(text[i:j])
@@ -32,12 +34,20 @@ def routing_copy(src, dst):
         if "smd custom" in block:
             def fix(m):
                 pad = m.group(0)
+                # replace the arrow-shaped custom pad by its exact bounding box
+                pts = [(float(x), float(y)) for x, y in re.findall(r"\(xy ([-\d.]+) ([-\d.]+)\)", pad)]
+                at = re.search(r"\(at ([-\d.]+) ([-\d.]+)\)", pad)
+                if pts and at:
+                    x0, x1 = min(p[0] for p in pts), max(p[0] for p in pts)
+                    y0, y1 = min(p[1] for p in pts), max(p[1] for p in pts)
+                    ax, ay = float(at.group(1)) + (x0 + x1) / 2, float(at.group(2)) + (y0 + y1) / 2
+                    pad = pad[:at.start()] + f"(at {ax:.4f} {ay:.4f})" + pad[at.end():]
+                    pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0:.4f} {y1 - y0:.4f})", pad, count=1)
                 pad = pad.replace("smd custom", "smd rect")
                 for key in ("(primitives", "(options"):
                     a = pad.find(key)
                     if a >= 0:
                         pad = pad[:a] + pad[sexpr_end(pad, a):]
-                pad = re.sub(r"\(size [\d.]+ ([\d.]+)\)", r"(size 0.8 \1)", pad, count=1)
                 return pad
             parts, a = [], 0
             for m in re.finditer(r"\(pad ", block):
@@ -54,6 +64,14 @@ def routing_copy(src, dst):
     out.append(text[i:])
     open(dst, "w").write("".join(out))
     return dst
+
+
+def _spans_without(text, head):
+    i = 0
+    for j, k in top_level_forms(text, head):
+        yield i, j
+        i = k
+    yield i, len(text)
 
 
 def parse_sexpr(text):
@@ -178,16 +196,12 @@ def set_rules(brd):
     nc.SetViaDiameter(MM(0.6))
 
 
-def main(src, dst, jar, passes="40"):
-    base = os.path.splitext(os.path.abspath(dst))[0]
-    rb = pcbnew.LoadBoard(routing_copy(os.path.abspath(src), base + ".routing.kicad_pcb"))
-    b = pcbnew.LoadBoard(os.path.abspath(src))
-    for brd in (rb, b):
-        set_rules(brd)
+def freeroute(board_file, base, jar, passes, keep_tracks):
+    rb = pcbnew.LoadBoard(routing_copy(board_file, base + ".routing.kicad_pcb", keep_tracks))
+    set_rules(rb)
     dsn, ses = base + ".dsn", base + ".ses"
     if not pcbnew.ExportSpecctraDSN(rb, dsn):
         sys.exit("DSN export failed")
-
     dsn_edge_margin(dsn, (EDGE_MM - 0.2) * 1000)
 
     # wider power tracks: move VCC/GND out of the default class into a 0.5 mm class
@@ -209,6 +223,23 @@ def main(src, dst, jar, passes="40"):
         cmd = ["xvfb-run", "-a"] + cmd
     print(" ".join(cmd), flush=True)
     subprocess.run(cmd, check=True)
+    return ses
+
+
+def main(src, dst, jar, passes="40"):
+    """Two Freerouting passes: the second starts from the first one's wiring and mops up
+    connections the first left open."""
+    base = os.path.splitext(os.path.abspath(dst))[0]
+    src = os.path.abspath(src)
+    ses = freeroute(src, base + ".pass1", jar, passes, keep_tracks=False)
+    mid = pcbnew.LoadBoard(src)
+    set_rules(mid)
+    import_ses(mid, ses)
+    mid.Save(base + ".pass1.kicad_pcb")
+    ses = freeroute(base + ".pass1.kicad_pcb", base + ".pass2", jar, "20", keep_tracks=True)
+
+    b = pcbnew.LoadBoard(src)
+    set_rules(b)
     import_ses(b, ses)
 
     # GND pour on both layers, inside the board outline
