@@ -31,6 +31,9 @@ def routing_copy(src, dst, keep_tracks=False):
         i = k
         if "keyball_logo" in block[:200]:
             continue
+        if re.search(r"\(footprint \"[^\"]*:(JP025|JP06)\"", block[:200]):
+            # normally-closed cut jumpers: their unnamed bridge pad overlaps both nets
+            block = _drop_unnamed_smd_pads(block)
         if "smd custom" in block:
             def fix(m):
                 pad = m.group(0)
@@ -40,10 +43,17 @@ def routing_copy(src, dst, keep_tracks=False):
                 if pts and at:
                     x0, x1 = min(p[0] for p in pts), max(p[0] for p in pts)
                     y0, y1 = min(p[1] for p in pts), max(p[1] for p in pts)
-                    ax, ay = float(at.group(1)) + (x0 + x1) / 2, float(at.group(2)) + (y0 + y1) / 2
+                    px = float(at.group(1))
+                    x0, x1, y0, y1 = px + x0 - 0.03, px + x1 + 0.03, y0 - 0.03, y1 + 0.03
+                    # the two arrow pads interlock; keep the rects 0.2 mm apart so the router
+                    # doesn't see overlapping pads of different nets (it then refuses both)
+                    if px < 0:
+                        x1 = min(x1, -0.1)
+                    else:
+                        x0 = max(x0, 0.1)
+                    ax, ay = (x0 + x1) / 2, float(at.group(2)) + (y0 + y1) / 2
                     pad = pad[:at.start()] + f"(at {ax:.4f} {ay:.4f})" + pad[at.end():]
-                    m_ = 0.06  # the pads carry a 0.19 mm local clearance; give the router margin
-                    pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0 + m_:.4f} {y1 - y0 + m_:.4f})", pad, count=1)
+                    pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0:.4f} {y1 - y0:.4f})", pad, count=1)
                 pad = pad.replace("smd custom", "smd rect")
                 for key in ("(primitives", "(options"):
                     a = pad.find(key)
@@ -65,6 +75,17 @@ def routing_copy(src, dst, keep_tracks=False):
     out.append(text[i:])
     open(dst, "w").write("".join(out))
     return dst
+
+
+def _drop_unnamed_smd_pads(block):
+    out, a = [], 0
+    for m in re.finditer(r"\(pad \"\" smd ", block):
+        if m.start() < a:
+            continue
+        out.append(block[a:m.start()])
+        a = sexpr_end(block, m.start())
+    out.append(block[a:])
+    return "".join(out)
 
 
 def _spans_without(text, head):
@@ -190,6 +211,7 @@ def dsn_edge_margin(dsn, margin_um):
 
 def set_rules(brd):
     brd.GetDesignSettings().m_CopperEdgeClearance = MM(EDGE_MM)
+    brd.GetDesignSettings().m_MinResolvedSpokes = 1
     nc = brd.GetDesignSettings().m_NetSettings.GetDefaultNetclass()
     nc.SetTrackWidth(MM(0.25))
     nc.SetClearance(MM(0.2))
@@ -228,8 +250,8 @@ def freeroute(board_file, base, jar, passes, keep_tracks):
 
 
 def main(src, dst, jar, passes="40"):
-    """Two Freerouting passes: the second starts from the first one's wiring and mops up
-    connections the first left open."""
+    """Three Freerouting passes: later passes start from the previous wiring and mop up
+    connections left open."""
     base = os.path.splitext(os.path.abspath(dst))[0]
     src = os.path.abspath(src)
     ses = freeroute(src, base + ".pass1", jar, passes, keep_tracks=False)
@@ -237,7 +259,12 @@ def main(src, dst, jar, passes="40"):
     set_rules(mid)
     import_ses(mid, ses)
     mid.Save(base + ".pass1.kicad_pcb")
-    ses = freeroute(base + ".pass1.kicad_pcb", base + ".pass2", jar, "20", keep_tracks=True)
+    for k in (2, 3):  # mop-up passes starting from the previous wiring
+        ses = freeroute(base + f".pass{k - 1}.kicad_pcb", base + f".pass{k}", jar, "30", keep_tracks=True)
+        mid = pcbnew.LoadBoard(src)
+        set_rules(mid)
+        import_ses(mid, ses)
+        mid.Save(base + f".pass{k}.kicad_pcb")
 
     b = pcbnew.LoadBoard(src)
     set_rules(b)
