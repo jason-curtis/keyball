@@ -42,7 +42,8 @@ def routing_copy(src, dst, keep_tracks=False):
                     y0, y1 = min(p[1] for p in pts), max(p[1] for p in pts)
                     ax, ay = float(at.group(1)) + (x0 + x1) / 2, float(at.group(2)) + (y0 + y1) / 2
                     pad = pad[:at.start()] + f"(at {ax:.4f} {ay:.4f})" + pad[at.end():]
-                    pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0:.4f} {y1 - y0:.4f})", pad, count=1)
+                    m_ = 0.06  # the pads carry a 0.19 mm local clearance; give the router margin
+                    pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0 + m_:.4f} {y1 - y0 + m_:.4f})", pad, count=1)
                 pad = pad.replace("smd custom", "smd rect")
                 for key in ("(primitives", "(options"):
                     a = pad.find(key)
