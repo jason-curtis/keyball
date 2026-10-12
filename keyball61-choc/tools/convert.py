@@ -42,7 +42,7 @@ FLIP = False  # set from SIDE in main()
 ANCHOR_COL = 4  # column 5 stays put; columns 1..4 move outward, column 6 inward
 INNER_DY = 1.0  # extra drop for the Pro Micro / OLED block and the inner key
 LED_DY = 4.7  # Choc v1 LED window centre, south of switch centre
-DIODE_OFS = (-7.3, 5.0)  # diode on the back, left of the LED, vertical
+DIODE_OFS = (8.0, 1.6)  # diode on the back, vertical, right beside socket pad 2 (short hop)
 
 
 def v(x, y):
@@ -596,6 +596,9 @@ def main(side, src, dst):
             print(f"!! {ref}: no room for an M2 hole near ({sx:.1f},{sy:.1f}), dropped")
             continue
         q = Point(best)
+        if best_s < -0.1:  # an M2 head would hit a switch housing: fewer standoffs beats that
+            print(f"{ref}: dropped (best spot only clears {housings.distance(q):.2f} mm to a housing)")
+            continue
         make_m2_hole(b, ref, best)
         flag = "" if best_s >= -0.06 else "  !! tight"
         print(f"{ref}: M2 hole at ({best[0]:.2f},{best[1]:.2f}) head {housings.distance(q):.2f} back {back.distance(q):.2f} "

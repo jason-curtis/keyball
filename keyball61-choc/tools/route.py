@@ -276,6 +276,10 @@ def finish(src, ses, dst):
         b.Add(z)
     pcbnew.ZONE_FILLER(b).Fill(b.Zones())
     b.Save(dst)
+    # Keyball's jumper footprints carry a 0.1905 mm per-pad clearance override; the board's
+    # 0.15 mm rule (well inside JLC's 0.1 mm capability) governs instead
+    text = open(dst).read()
+    open(dst, "w").write(re.sub(r"\s*\(clearance 0\.1905\)", "", text))
     open(os.path.splitext(dst)[0] + ".kicad_dru", "w").write(dru_for(b))
     print("saved", dst)
 
