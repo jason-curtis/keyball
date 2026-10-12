@@ -364,6 +364,8 @@ def main(src, dst, jar, passes="40", rounds="5"):
                 break
     print(f"best: {best[2]} ({best[0]} copper violations, {best[1]} unconnected)", flush=True)
     finish(best[2], dst)
+    import fixup  # grid router with rip-up for whatever Freerouting left open
+    fixup.main(dst)
 
 
 if __name__ == "__main__":

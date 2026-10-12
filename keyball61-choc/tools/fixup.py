@@ -20,6 +20,9 @@ import shapely
 from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from convert import cutout_box  # noqa: E402
+
 MM = pcbnew.FromMM
 TOMM = pcbnew.ToMM
 GRID = 0.1
@@ -54,10 +57,9 @@ def copper(board, layer):
                 holes.append(Point(TOMM(p.GetPosition().x), TOMM(p.GetPosition().y)).buffer(TOMM(p.GetDrillSize().x) / 2))
             if p.GetAttribute() != pcbnew.PAD_ATTRIB_NPTH and p.IsOnLayer(layer):
                 add(p.GetNetname(), polyset_to_shapely(p.GetEffectivePolygon(layer)))
-        for g in fp.GraphicalItems():
-            if g.GetLayer() == pcbnew.Edge_Cuts:
-                bb = g.GetBoundingBox()
-                holes.append(box(TOMM(bb.GetX()), TOMM(bb.GetY()), TOMM(bb.GetRight()), TOMM(bb.GetBottom())))
+        cut = cutout_box(fp)
+        if cut is not None:
+            holes.append(cut)
     for t in board.GetTracks():
         if t.GetClass() == "PCB_VIA":
             c = Point(TOMM(t.GetPosition().x), TOMM(t.GetPosition().y))

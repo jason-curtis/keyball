@@ -219,6 +219,16 @@ def strip_routing(src, tmp):
 
 
 # ------------------------------------------------------------------ geometry
+def cutout_box(fp):
+    """A footprint's internal Edge.Cuts cut-out (the reverse-mount LED window) as one filled
+    box. It is drawn as four thin line segments, so per-segment boxes would leave it hollow."""
+    bbs = [g.GetBoundingBox() for g in fp.GraphicalItems() if g.GetLayer() == pcbnew.Edge_Cuts]
+    if not bbs:
+        return None
+    return box(min(TOMM(b.GetX()) for b in bbs), min(TOMM(b.GetY()) for b in bbs),
+               max(TOMM(b.GetRight()) for b in bbs), max(TOMM(b.GetBottom()) for b in bbs))
+
+
 def board_polygon(board):
     ps = pcbnew.SHAPE_POLY_SET()
     board.GetBoardPolygonOutlines(ps)
@@ -258,12 +268,10 @@ def fp_keepouts(fp, with_housing=False, socket=False):
             sides["F"].append(g)
         if through or p.IsOnLayer(pcbnew.B_Cu):
             sides["B"].append(g)
-    for g in fp.GraphicalItems():
-        if g.GetLayer() == pcbnew.Edge_Cuts:
-            bb = g.GetBoundingBox()
-            r = box(TOMM(bb.GetX()), TOMM(bb.GetY()), TOMM(bb.GetRight()), TOMM(bb.GetBottom()))
-            sides["F"].append(r)
-            sides["B"].append(r)
+    cut = cutout_box(fp)
+    if cut is not None:
+        sides["F"].append(cut)
+        sides["B"].append(cut)
     cx, cy = pos(fp)
     fl = fp.IsFlipped()
     if socket and is_choc(fp):
