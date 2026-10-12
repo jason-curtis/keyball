@@ -9,3 +9,7 @@ freerouting.json
 *-backups/
 fp-info-cache
 __pycache__/
+*.src.kicad_pcb
+*.src.kicad_pro
+*.src.kicad_dru
+*.drc.json
