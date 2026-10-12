@@ -1,0 +1,7 @@
+(version 1)
+(rule "SK6812MINI-E pads hug their own reverse-mount cut-out (by design, as in Keyball61)"
+  (constraint edge_clearance (min 0mm))
+  (condition "A.Type == 'Pad' && A.memberOfFootprint('LED*')"))
+(rule "Keyball 3-pad solder jumpers (as designed)"
+  (constraint clearance (min 0mm))
+  (condition "A.memberOfFootprint('JP18') || A.memberOfFootprint('JP20') || A.memberOfFootprint('LED')"))
