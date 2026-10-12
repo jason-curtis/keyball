@@ -3,6 +3,7 @@
 
 Usage: route.py <in.kicad_pcb> <out.kicad_pcb> <freerouting.jar> [passes]
 """
+import json
 import os
 import subprocess
 import sys
@@ -251,11 +252,55 @@ def freeroute(board_file, base, jar, passes, keep_tracks):
     return ses
 
 
-def finish(src, ses, dst):
-    """Import the routed wiring into the converted board, add the GND pours and save."""
-    b = pcbnew.LoadBoard(os.path.abspath(src))
+def drc(path):
+    """Run KiCad DRC; return (track/via uuids involved in copper violations, #violations, #unconnected)."""
+    rpt = path + ".drc.json"
+    subprocess.run(["kicad-cli", "pcb", "drc", "--format", "json", "--severity-error", "-o", rpt, path],
+                   check=True, stdout=subprocess.DEVNULL)
+    d = json.load(open(rpt))
+    bad, n = set(), 0
+    for v in d["violations"]:
+        if v["type"] not in COPPER_CHECKS:
+            continue
+        n += 1
+        for it in v["items"]:
+            if it["description"].startswith(("Track", "Via")):
+                bad.add(it["uuid"])
+    return bad, n, len(d["unconnected_items"])
+
+
+COPPER_CHECKS = {"shorting_items", "tracks_crossing", "clearance", "hole_clearance",
+                 "copper_edge_clearance", "track_dangling", "via_dangling"}
+
+
+def drop_items(src, dst, uuids):
+    """Copy a board without the tracks/vias whose uuid is listed."""
+    text = open(src).read()
+    out, i = [], 0
+    for m in re.finditer(r"\n[\t ]+\((?:segment|arc|via)\s", text):
+        j = m.start()
+        k = sexpr_end(text, j + m.group(0).index("("))
+        u = re.search(r'\(uuid "([^"]+)"\)', text[j:k])
+        out.append(text[i:j])
+        if not (u and u.group(1) in uuids):
+            out.append(text[j:k])
+        i = k
+    out.append(text[i:])
+    open(dst, "w").write("".join(out))
+
+
+def save_routed(src, ses, path):
+    b = pcbnew.LoadBoard(src)
     set_rules(b)
     import_ses(b, ses)
+    b.Save(path)
+    open(os.path.splitext(path)[0] + ".kicad_dru", "w").write(dru_for(b))
+
+
+def finish(routed, dst):
+    """Add the GND pours to the best routed board and save it as the deliverable."""
+    b = pcbnew.LoadBoard(os.path.abspath(routed))
+    set_rules(b)
     gnd = b.GetNetcodeFromNetname("GND")
     bb = b.GetBoardEdgesBoundingBox()
     for layer in (pcbnew.F_Cu, pcbnew.B_Cu):
@@ -276,33 +321,50 @@ def finish(src, ses, dst):
         b.Add(z)
     pcbnew.ZONE_FILLER(b).Fill(b.Zones())
     b.Save(dst)
-    # Keyball's jumper footprints carry a 0.1905 mm per-pad clearance override; the board's
-    # 0.15 mm rule (well inside JLC's 0.1 mm capability) governs instead
-    text = open(dst).read()
-    open(dst, "w").write(re.sub(r"\s*\(clearance 0\.1905\)", "", text))
     open(os.path.splitext(dst)[0] + ".kicad_dru", "w").write(dru_for(b))
     print("saved", dst)
 
 
-def main(src, dst, jar, passes="40"):
-    """Two Freerouting passes: the second starts from the first one's wiring and mops up
-    connections left open. A third pass gained nothing and hung Freerouting, so two it is."""
+def main(src, dst, jar, passes="40", rounds="5"):
+    """Freerouting, then repair rounds: DRC the result, rip out only the tracks involved in
+    copper violations, let Freerouting re-route from the remaining wiring, keep the best."""
     base = os.path.splitext(os.path.abspath(dst))[0]
-    src = os.path.abspath(src)
-    ses = freeroute(src, base + ".pass1", jar, passes, keep_tracks=False)
-    mid = pcbnew.LoadBoard(src)
-    set_rules(mid)
-    import_ses(mid, ses)
-    mid.Save(base + ".pass1.kicad_pcb")
-    try:
-        ses = freeroute(base + ".pass1.kicad_pcb", base + ".pass2", jar, "30", keep_tracks=True)
-    except subprocess.TimeoutExpired:
-        print("pass 2 timed out; keeping pass 1")
-    finish(src, ses, dst)
+    # Keyball's jumper footprints carry a 0.1905 mm per-pad clearance override; the board's
+    # 0.15 mm rule (well inside JLC's capability) governs instead. Strip it before routing
+    # and before the zones are filled.
+    clean = base + ".src.kicad_pcb"
+    open(clean, "w").write(re.sub(r"\s*\(clearance 0\.1905\)", "", open(os.path.abspath(src)).read()))
+
+    ses = freeroute(clean, base + ".pass1", jar, passes, keep_tracks=False)
+    cur = base + ".pass1.kicad_pcb"
+    save_routed(clean, ses, cur)
+    bad, nv, nu = drc(cur)
+    best = (nv, nu, cur)
+    print(f"pass 1: {nv} copper violations, {nu} unconnected", flush=True)
+    stale = 0
+    for k in range(2, 2 + int(rounds)):
+        if nv == 0 and nu == 0:
+            break
+        trimmed = base + f".pass{k}.in.kicad_pcb"
+        drop_items(cur, trimmed, bad)
+        try:
+            ses = freeroute(trimmed, base + f".pass{k}", jar, "30", keep_tracks=True)
+        except subprocess.TimeoutExpired:
+            print(f"pass {k}: Freerouting timed out", flush=True)
+            break
+        cur = base + f".pass{k}.kicad_pcb"
+        save_routed(clean, ses, cur)
+        bad, nv, nu = drc(cur)
+        print(f"pass {k}: {nv} copper violations, {nu} unconnected", flush=True)
+        if (nv, nu) < best[:2]:
+            best, stale = (nv, nu, cur), 0
+        else:
+            stale += 1
+            if stale >= 2:
+                break
+    print(f"best: {best[2]} ({best[0]} copper violations, {best[1]} unconnected)", flush=True)
+    finish(best[2], dst)
 
 
 if __name__ == "__main__":
-    if sys.argv[1] == "--finish":  # route.py --finish <converted.kicad_pcb> <routed.ses> <out.kicad_pcb>
-        finish(*sys.argv[2:5])
-    else:
-        main(*sys.argv[1:])
+    main(*sys.argv[1:])
