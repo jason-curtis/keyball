@@ -39,7 +39,7 @@ def routing_copy(src, dst, keep_tracks=False):
                 pad = m.group(0)
                 # replace the arrow-shaped custom pad by its exact bounding box
                 pts = [(float(x), float(y)) for x, y in re.findall(r"\(xy ([-\d.]+) ([-\d.]+)\)", pad)]
-                at = re.search(r"\(at ([-\d.]+) ([-\d.]+)\)", pad)
+                at = re.search(r"\(at ([-\d.]+) ([-\d.]+)( [-\d.]+)?\)", pad)
                 if pts and at:
                     x0, x1 = min(p[0] for p in pts), max(p[0] for p in pts)
                     y0, y1 = min(p[1] for p in pts), max(p[1] for p in pts)
@@ -52,7 +52,9 @@ def routing_copy(src, dst, keep_tracks=False):
                     else:
                         x0 = max(x0, 0.1)
                     ax, ay = (x0 + x1) / 2, float(at.group(2)) + (y0 + y1) / 2
-                    pad = pad[:at.start()] + f"(at {ax:.4f} {ay:.4f})" + pad[at.end():]
+                    # pad angle in the file is absolute; these pads sit at 0 relative to their
+                    # footprint, so the footprint-frame box above is also the pad-frame box
+                    pad = pad[:at.start()] + f"(at {ax:.4f} {ay:.4f}{at.group(3) or ''})" + pad[at.end():]
                     pad = re.sub(r"\(size [\d.]+ [\d.]+\)", f"(size {x1 - x0:.4f} {y1 - y0:.4f})", pad, count=1)
                 pad = pad.replace("smd custom", "smd rect")
                 for key in ("(primitives", "(options"):
@@ -182,7 +184,7 @@ def dru_for(board):
 
 
 def dsn_edge_margin(dsn, margin_um):
-    """Freerouting keeps the class clearance (0.2 mm) from the boundary and cut-outs; push both
+    """Freerouting keeps the class clearance (0.15 mm) from the boundary and cut-outs; push both
     by `margin_um` so copper ends up EDGE_MM from every edge."""
     from shapely.geometry import Polygon
 
@@ -213,8 +215,8 @@ def set_rules(brd):
     brd.GetDesignSettings().m_CopperEdgeClearance = MM(EDGE_MM)
     brd.GetDesignSettings().m_MinResolvedSpokes = 1
     nc = brd.GetDesignSettings().m_NetSettings.GetDefaultNetclass()
-    nc.SetTrackWidth(MM(0.25))
-    nc.SetClearance(MM(0.2))
+    nc.SetTrackWidth(MM(0.2))
+    nc.SetClearance(MM(0.15))
     nc.SetViaDrill(MM(0.3))
     nc.SetViaDiameter(MM(0.6))
 
@@ -225,7 +227,7 @@ def freeroute(board_file, base, jar, passes, keep_tracks):
     dsn, ses = base + ".dsn", base + ".ses"
     if not pcbnew.ExportSpecctraDSN(rb, dsn):
         sys.exit("DSN export failed")
-    dsn_edge_margin(dsn, (EDGE_MM - 0.2) * 1000)
+    dsn_edge_margin(dsn, (EDGE_MM - 0.15) * 1000)
 
     # wider power tracks: move VCC/GND out of the default class into a 0.5 mm class
     text = open(dsn).read()
@@ -236,7 +238,7 @@ def freeroute(board_file, base, jar, passes, keep_tracks):
         rest = " ".join(n for n in members if n not in power)
         text = text[:m.start(1)] + " " + rest + "\n      " + text[m.end(1):]
         cls = ("    (class power " + " ".join(power) +
-               "\n      (circuit (use_via \"Via[0-1]_600:300_um\"))\n      (rule (width 500) (clearance 200))\n    )\n")
+               "\n      (circuit (use_via \"Via[0-1]_600:300_um\"))\n      (rule (width 400) (clearance 150))\n    )\n")
         i = text.rindex("  )\n  (wiring")
         text = text[:i] + cls + text[i:]
         open(dsn, "w").write(text)
@@ -245,32 +247,15 @@ def freeroute(board_file, base, jar, passes, keep_tracks):
     if not os.environ.get("DISPLAY"):
         cmd = ["xvfb-run", "-a"] + cmd
     print(" ".join(cmd), flush=True)
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, check=True, timeout=1800)  # Freerouting can stall once nothing is left
     return ses
 
 
-def main(src, dst, jar, passes="40"):
-    """Three Freerouting passes: later passes start from the previous wiring and mop up
-    connections left open."""
-    base = os.path.splitext(os.path.abspath(dst))[0]
-    src = os.path.abspath(src)
-    ses = freeroute(src, base + ".pass1", jar, passes, keep_tracks=False)
-    mid = pcbnew.LoadBoard(src)
-    set_rules(mid)
-    import_ses(mid, ses)
-    mid.Save(base + ".pass1.kicad_pcb")
-    for k in (2, 3):  # mop-up passes starting from the previous wiring
-        ses = freeroute(base + f".pass{k - 1}.kicad_pcb", base + f".pass{k}", jar, "30", keep_tracks=True)
-        mid = pcbnew.LoadBoard(src)
-        set_rules(mid)
-        import_ses(mid, ses)
-        mid.Save(base + f".pass{k}.kicad_pcb")
-
-    b = pcbnew.LoadBoard(src)
+def finish(src, ses, dst):
+    """Import the routed wiring into the converted board, add the GND pours and save."""
+    b = pcbnew.LoadBoard(os.path.abspath(src))
     set_rules(b)
     import_ses(b, ses)
-
-    # GND pour on both layers, inside the board outline
     gnd = b.GetNetcodeFromNetname("GND")
     bb = b.GetBoardEdgesBoundingBox()
     for layer in (pcbnew.F_Cu, pcbnew.B_Cu):
@@ -295,5 +280,25 @@ def main(src, dst, jar, passes="40"):
     print("saved", dst)
 
 
+def main(src, dst, jar, passes="40"):
+    """Two Freerouting passes: the second starts from the first one's wiring and mops up
+    connections left open. A third pass gained nothing and hung Freerouting, so two it is."""
+    base = os.path.splitext(os.path.abspath(dst))[0]
+    src = os.path.abspath(src)
+    ses = freeroute(src, base + ".pass1", jar, passes, keep_tracks=False)
+    mid = pcbnew.LoadBoard(src)
+    set_rules(mid)
+    import_ses(mid, ses)
+    mid.Save(base + ".pass1.kicad_pcb")
+    try:
+        ses = freeroute(base + ".pass1.kicad_pcb", base + ".pass2", jar, "30", keep_tracks=True)
+    except subprocess.TimeoutExpired:
+        print("pass 2 timed out; keeping pass 1")
+    finish(src, ses, dst)
+
+
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    if sys.argv[1] == "--finish":  # route.py --finish <converted.kicad_pcb> <routed.ses> <out.kicad_pcb>
+        finish(*sys.argv[2:5])
+    else:
+        main(*sys.argv[1:])
