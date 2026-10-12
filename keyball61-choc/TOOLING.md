@@ -13,6 +13,7 @@ files after any tweak to the conversion parameters.
 | Java | 17+ | runs Freerouting |
 | Freerouting | **1.9.0** jar | autorouter (Specctra DSN → SES) |
 | xvfb (Linux, headless only) | any | Freerouting 1.9 opens a hidden window even in batch mode. `route.py` wraps it in `xvfb-run` when `$DISPLAY` is unset. |
+| numpy, ezdxf | any | grid router (`fixup.py`), plate DXFs (`plates.py`) |
 | cairosvg (optional) | any | turns `kicad-cli` SVG exports into PNG previews |
 
 ### Ubuntu 24.04 (what the cloud sessions use)
@@ -27,7 +28,7 @@ echo "deb [signed-by=/usr/share/keyrings/kicad-ppa.gpg] https://ppa.launchpadcon
 apt-get update
 apt-get install -y --no-install-recommends kicad xvfb xauth default-jre-headless
 
-python3.12 -m pip install --break-system-packages shapely cairosvg
+python3.12 -m pip install --break-system-packages shapely numpy ezdxf cairosvg
 
 mkdir -p ~/tools
 curl -L -o ~/tools/freerouting.jar \
@@ -56,15 +57,20 @@ unzip keyball61/design_data/keyball61_Left_KiCad.zip  -d /tmp/kb61
 python3.12 keyball61-choc/tools/convert.py right /tmp/kb61/keyball61_Right_KiCad/keyball61_right.kicad_pcb /tmp/kb61/right.kicad_pcb
 python3.12 keyball61-choc/tools/convert.py left  /tmp/kb61/keyball61_Left_KiCad/keyball61_Left.kicad_pcb  /tmp/kb61/left.kicad_pcb
 
-# 2. autoroute (Freerouting) + GND pours. Takes 10–20 min per half.
+# 2. route: Freerouting, DRC-driven rip-up/re-route rounds, then tools/fixup.py (grid A* router with
+#    rip-up) for the last few nets, then GND pours. Takes ~30–60 min per half.
 python3.12 keyball61-choc/tools/route.py /tmp/kb61/right.kicad_pcb keyball61-choc/pcb/right/keyball61_choc_right.kicad_pcb ~/tools/freerouting.jar 30
 python3.12 keyball61-choc/tools/route.py /tmp/kb61/left.kicad_pcb  keyball61-choc/pcb/left/keyball61_choc_left.kicad_pcb  ~/tools/freerouting.jar 30
 
 # 3. DRC
 kicad-cli pcb drc --severity-error -o right-drc.rpt keyball61-choc/pcb/right/keyball61_choc_right.kicad_pcb
 
-# 4. fab outputs (gerbers, drill, JLC BOM/CPL)
+# 4. fab outputs (gerbers, drill, JLC BOM/CPL) and acrylic bottom plates
 python3.12 keyball61-choc/tools/fab.py
+python3.12 keyball61-choc/tools/plates.py
+
+# fixup.py also runs standalone on any board after hand edits:
+python3.12 keyball61-choc/tools/fixup.py keyball61-choc/pcb/right/keyball61_choc_right.kicad_pcb
 ```
 
 The KiCad project files can be opened in the KiCad 9 GUI for hand touch-ups. The footprint library is
@@ -81,5 +87,14 @@ The KiCad project files can be opened in the KiCad 9 GUI for hand touch-ups. The
   and with rect jumper pads.
 - **SES import:** KiCad rejects Freerouting 1.9's duplicated via padstacks, so `route.py` has its own small
   SES importer.
+- **Freerouting can stall** once nothing is left that it can route. Each run has a 30-minute timeout, and the
+  best earlier pass is kept.
+- **Keyball's cut jumpers** overlap their pads by design (normally closed). The routing copy drops the bridge pad
+  and approximates the arrow pads with non-overlapping boxes. Their 0.1905 mm per-pad clearance override is
+  stripped so the 0.15 mm board rule applies.
+- **LED cut-outs** are drawn as four thin Edge.Cuts lines. Treat them as filled boxes in any geometry check,
+  or parts get placed and tracks routed into the hole.
+- **BOARD.Remove() still corrupts SWIG proxies on KiCad 9** when another board is loaded later in the same
+  process. The scripts delete tracks by uuid in the saved file instead.
 - **KiCad 7 SWIG quirks:** removing items through the Python API corrupts proxies. The scripts mark
   items and strip them from the saved file text instead. That approach also works on KiCad 9.

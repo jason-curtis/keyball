@@ -9,8 +9,10 @@ low-profile linears**, keeping everything that makes a Keyball a Keyball:
 
 Prices checked 2026-10-11 in USD. **(est.)** marks figures that could not be quoted live.
 
-> **Status: v0.1, unbuilt prototype.** The PCBs are generated, routed and DRC-checked, but nobody has
-> fabricated one yet. Read §7 before ordering.
+> **Status: v0.1, unbuilt prototype.** Both PCBs are generated and fully routed. KiCad 9 DRC reports
+> **0 errors and 0 unconnected items** on each half (`pcb/*/drc.rpt`; the remaining warnings are
+> silkscreen cosmetics and "footprint differs from library"). Nobody has fabricated one yet, so read §7
+> before ordering.
 
 ---
 
@@ -39,9 +41,13 @@ version. The conversion is fully scripted; see [TOOLING.md](TOOLING.md).
   - Keyball's left PCB is mounted upside down, so its "solder side" is the file's F.Cu.
 - **Case:** M4 spacer holes → **M2** holes, re-placed into the Choc key gaps.
   - They keep ≥1.9 mm from switch housings for screw heads and ≥2 mm from sockets for standoffs.
+  - Holes that couldn't meet that were dropped: 7 per half remain (originally 9 and 8). On the left half the outer-bottom corner has no standoff, so put a rubber foot there.
   - New outlines and 2 mm acrylic bottom plates are included. The right plate fills the notch and carries the original ball-case screw holes.
 - **Board size:** the outline is regenerated from the Choc key cells and is about 10 % smaller.
-- **Routing:** fully re-routed (Freerouting), with GND pours on both layers, 0.25 mm signals, 0.5 mm power and 0.3 mm copper-to-edge.
+- **Diodes:** each key's diode sits right beside its socket's second pad, a short hop instead of a trip across the key.
+- **Routing:** fully re-routed with GND pours on both layers.
+  - Tools: Freerouting, plus DRC-driven rip-up rounds and a small grid router for the last few nets.
+  - Rules: 0.2 mm signals, 0.4 mm power, 0.15 mm clearance, 0.3 mm copper-to-edge, 0.6/0.3 mm vias. All within JLC's standard process.
 - **Unchanged:**
   - every net: matrix, LED chain order, OLED/I²C, TRRS, the left/right jumpers and the ball connector;
   - firmware;
@@ -56,7 +62,7 @@ version. The conversion is fully scripted; see [TOOLING.md](TOOLING.md).
 | `fab/{left,right}/` | **Order files:** gerber zip, JLC BOM, JLC CPL |
 | `case/` | 2 mm acrylic bottom plates (DXF) |
 | `tools/` | `convert.py` → `route.py` → `fab.py` / `plates.py` |
-| `renders/` | PNG previews |
+| `renders/` | KiCad 3D renders of each half: top and bottom |
 
 ---
 
@@ -104,8 +110,8 @@ Have the two `case/*_bottom_2mm.dxf` files laser-cut in 2 mm acrylic, for exampl
 SendCutSend or Ponoko. **≈ $25–40** (est.).
 
 Hardware:
-- M2 × 4 mm F-F hex standoffs: 17;
-- M2 × 4 mm low-profile screws: 34;
+- M2 × 4 mm F-F hex standoffs: 14;
+- M2 × 4 mm low-profile screws: 28;
 - rubber bumpers: ~8.
 
 An Amazon M2 assortment is **≈ $10**.
@@ -181,7 +187,7 @@ Sensor board, DIY alternative:
 
 ## 7. Before you order: check these
 
-- **Open both boards in KiCad 9 and look them over.** They are machine-generated. DRC is clean on errors (see `pcb/*/drc.rpt`), but nobody has reviewed them by eye yet.
+- **Open both boards in KiCad 9 and look them over.** They are machine-generated. DRC is clean (`pcb/*/drc.rpt`), but nobody has reviewed them by eye yet. Check especially the autorouted area around the controller and the underglow LEDs the placer moved.
 - **Optionally print the PCB at 1:1** and set a few Choc switches, MBK caps, the ball case and your hand on it.
 - **Ball case fit.** The notch and J2 are unchanged, but the bottom-row keys around the notch moved slightly. The ball case's outer shell isn't in Yowkees' repo, so check it physically or against the holykeebs case dimensions.
 - **Sockets at JLC.** Order C5333465 into your JLC parts library first.

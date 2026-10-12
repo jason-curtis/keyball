@@ -21,7 +21,7 @@ from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from convert import cutout_box  # noqa: E402
+from convert import cutout_box, sexpr_end  # noqa: E402
 
 MM = pcbnew.FromMM
 TOMM = pcbnew.ToMM
@@ -46,7 +46,7 @@ def copper(board, layer):
     """Obstacles on one layer: (hard {net: geom}, holes geom, soft [(net, track, geom)]).
 
     Hard = pads and vias, soft = tracks (the router may rip those up)."""
-    hard, holes, soft = {}, [], []
+    hard, holes, soft = {}, {}, []
 
     def add(net, g):
         hard.setdefault(net, []).append(g)
@@ -54,23 +54,25 @@ def copper(board, layer):
     for fp in board.GetFootprints():
         for p in fp.Pads():
             if p.GetDrillSize().x > 0:
-                holes.append(Point(TOMM(p.GetPosition().x), TOMM(p.GetPosition().y)).buffer(TOMM(p.GetDrillSize().x) / 2))
+                holes.setdefault(p.GetNetname(), []).append(
+                    Point(TOMM(p.GetPosition().x), TOMM(p.GetPosition().y)).buffer(TOMM(p.GetDrillSize().x) / 2))
             if p.GetAttribute() != pcbnew.PAD_ATTRIB_NPTH and p.IsOnLayer(layer):
                 add(p.GetNetname(), polyset_to_shapely(p.GetEffectivePolygon(layer)))
         cut = cutout_box(fp)
         if cut is not None:
-            holes.append(cut)
+            holes.setdefault("", []).append(cut)
     for t in board.GetTracks():
         if t.GetClass() == "PCB_VIA":
             c = Point(TOMM(t.GetPosition().x), TOMM(t.GetPosition().y))
             add(t.GetNetname(), c.buffer(TOMM(t.GetWidth(layer)) / 2))
-            holes.append(c.buffer(TOMM(t.GetDrillValue()) / 2))
+            holes.setdefault(t.GetNetname(), []).append(c.buffer(TOMM(t.GetDrillValue()) / 2))
         elif t.GetLayer() == layer:
             st, en = t.GetStart(), t.GetEnd()
             ln = LineString([(TOMM(st.x), TOMM(st.y)), (TOMM(en.x), TOMM(en.y))])
             w = TOMM(t.GetWidth()) / 2
             soft.append((t.GetNetname(), t, ln.buffer(w) if ln.length else Point(TOMM(st.x), TOMM(st.y)).buffer(w)))
-    return {k: unary_union(v) for k, v in hard.items()}, unary_union(holes), soft
+    return ({k: unary_union(v) for k, v in hard.items()},
+            {k: unary_union(v) for k, v in holes.items()}, soft)
 
 
 def board_outline(board):
@@ -108,14 +110,15 @@ def endpoints(board, item):
 
 
 HOLE_CLEAR = 0.25 + 0.02
+MARGIN = 15.0  # search window around the pair, mm
 RIP_COST = 60.0  # per grid step through another net's track (it gets ripped up and re-routed)
 
 
 def route_pair(board, net, starts, goals, cu, outline, width):
     xs = [p[0] for p in starts + goals]
     ys = [p[1] for p in starts + goals]
-    x0, x1 = min(xs) - 8, max(xs) + 8
-    y0, y1 = min(ys) - 8, max(ys) + 8
+    x0, x1 = min(xs) - MARGIN, max(xs) + MARGIN
+    y0, y1 = min(ys) - MARGIN, max(ys) + MARGIN
     nx, ny = int((x1 - x0) / GRID) + 1, int((y1 - y0) / GRID) + 1
     gx, gy = np.meshgrid(x0 + np.arange(nx) * GRID, y0 + np.arange(ny) * GRID, indexing="ij")
     inside = shapely.contains_xy(outline.buffer(-(EDGE + width / 2)), gx, gy)
@@ -125,6 +128,7 @@ def route_pair(board, net, starts, goals, cu, outline, width):
     for ln in LAYERS:
         hard, holes, tracks = cu[ln]
         others = unary_union([g for n, g in hard.items() if n != net])
+        holes = unary_union([g for n, g in holes.items() if n != net or n == ""])  # own drills are fine
         blocked = shapely.contains_xy(others.buffer(CLEAR + width / 2), gx, gy) | \
             shapely.contains_xy(holes.buffer(HOLE_CLEAR + width / 2), gx, gy)
         vblocked = shapely.contains_xy(others.buffer(CLEAR + VIA_D / 2), gx, gy) | \
@@ -191,8 +195,27 @@ def route_pair(board, net, starts, goals, cu, outline, width):
     return [(x0 + i * GRID, y0 + j * GRID, ln) for i, j, ln in path]
 
 
+def drop_uuids(path, uuids):
+    """Delete tracks/vias by uuid from the saved file (BOARD.Remove() breaks the SWIG proxies
+    of boards loaded later in the same process)."""
+    import re
+
+    text = open(path).read()
+    out, i = [], 0
+    for m in re.finditer(r"\n[\t ]+\((?:segment|arc|via)\s", text):
+        j = m.start()
+        k = sexpr_end(text, j + m.group(0).index("("))
+        u = re.search(r'\(uuid "([^"]+)"\)', text[j:k])
+        out.append(text[i:j])
+        if not (u and u.group(1) in uuids):
+            out.append(text[j:k])
+        i = k
+    out.append(text[i:])
+    open(path, "w").write("".join(out))
+
+
 def rip_crossed(board, net, path, cu, width):
-    """Remove other nets' tracks that the new path runs through; returns how many."""
+    """uuids of other nets' tracks that the new path runs through (dropped after saving)."""
     victims = set()
     for ln in LAYERS:
         pts = [(x, y) for x, y, l2 in path if l2 == ln]
@@ -204,9 +227,7 @@ def rip_crossed(board, net, path, cu, width):
         for n, t, tg in cu[ln][2]:
             if n != net and tg.intersects(g):
                 victims.add(t)
-    for t in victims:
-        board.Remove(t)
-    return len(victims)
+    return {str(t.m_Uuid.AsString()) for t in victims}
 
 
 def add_path(board, net, path, width):
@@ -250,6 +271,14 @@ def add_path(board, net, path, width):
 
 def main(path, rounds=8):
     path = os.path.abspath(path)
+    # first rip out any track/via that DRC flags for a copper violation; re-routed below
+    _, viol = unconnected(path)
+    bad = {it["uuid"] for v in viol if v["type"] in ("clearance", "shorting_items", "tracks_crossing",
+                                                     "hole_clearance", "copper_edge_clearance")
+           for it in v["items"] if it["description"].startswith(("Track", "Via"))}
+    if bad:
+        drop_uuids(path, bad)
+        print(f"ripped {len(bad)} tracks/vias with DRC violations")
     last = None
     for rnd in range(int(rounds)):
         items, viol = unconnected(path)
@@ -261,7 +290,7 @@ def main(path, rounds=8):
         last = (len(items),)
         b = pcbnew.LoadBoard(path)
         outline = board_outline(b)
-        done = ripped = 0
+        done, ripped = 0, set()
         for it in items:
             cu = {ln: copper(b, l) for ln, l in LAYERS.items()}
             a, c = it["items"][0], it["items"][1]
@@ -271,12 +300,15 @@ def main(path, rounds=8):
             if not path_:
                 print(f"  no path for {net}")
                 continue
-            ripped += rip_crossed(b, net, path_, cu, width)
+            ripped |= rip_crossed(b, net, path_, cu, width)
             add_path(b, net, path_, width)
             done += 1
-        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
         b.Save(path)
-        print(f"round {rnd + 1}: routed {done}/{len(items)}, ripped {ripped} tracks", flush=True)
+        drop_uuids(path, ripped)
+        print(f"round {rnd + 1}: routed {done}/{len(items)}, ripped {len(ripped)} tracks", flush=True)
+    b = pcbnew.LoadBoard(path)  # refill the pours around the new copper
+    pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+    b.Save(path)
     items, viol = unconnected(path)
     print(f"final: {len(viol)} violations, {len(items)} unconnected")
 

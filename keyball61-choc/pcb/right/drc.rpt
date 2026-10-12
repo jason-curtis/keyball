@@ -1,0 +1,2130 @@
+** Drc report for keyball61_choc_right.kicad_pcb **
+** Created on 2026-10-12T02:32:06+0000 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 623 DRC violations **
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(106.5041 mm, 95.2200 mm): PTH pad A [Net-(J13-PadA)] of J13
+    @(106.7041 mm, 90.1200 mm): Segment of J13 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(106.5041 mm, 92.7700 mm): PTH pad A [Net-(J13-PadA)] of J13
+    @(106.7041 mm, 90.1200 mm): Segment of J13 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on F.Silkscreen
+    @(115.1600 mm, 84.4697 mm): Rectangle of SW18 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on F.Silkscreen
+    @(115.1600 mm, 84.4697 mm): Rectangle of SW18 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 84.4697 mm): Rectangle of SW18 on F.Silkscreen
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 104.3713 mm): Segment of D24 on F.Silkscreen
+    @(131.1637 mm, 108.7229 mm): Reference field of LED2
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(127.2827 mm, 111.5682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(127.2827 mm, 113.3182 mm): Segment of LED2 on F.Silkscreen
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(127.4827 mm, 111.3682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 104.3713 mm): Segment of D24 on F.Silkscreen
+    @(135.0827 mm, 109.6182 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.2440 mm, 109.7713 mm): Segment of D24 on F.Silkscreen
+    @(135.0827 mm, 109.6182 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(135.0827 mm, 109.6182 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(135.0827 mm, 109.6182 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(127.1827 mm, 109.8682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 109.9682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 111.3682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 111.4682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 111.4682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 111.5682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(127.3827 mm, 110.0682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 109.8682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 110.0682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 110.0682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+    @(129.1827 mm, 110.1682 mm): Segment of LED2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 109.7713 mm): Segment of D24 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 104.3713 mm): Segment of D24 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.2440 mm, 109.7713 mm): Segment of D24 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(173.2900 mm, 110.1797 mm): Reference field of LED21
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(180.0600 mm, 111.0200 mm): Segment of LED21 on F.Silkscreen
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(200.7056 mm, 122.9849 mm): Reference field of LED4
+    @(202.3846 mm, 122.8402 mm): Segment of LED4 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(202.6846 mm, 122.8402 mm): Segment of LED4 on F.Silkscreen
+    @(200.7056 mm, 122.9849 mm): Reference field of LED4
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(207.5600 mm, 120.6700 mm): Circle of LED11 on F.Silkscreen
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(205.1600 mm, 108.1700 mm): Rectangle of SW19 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(207.5600 mm, 120.7700 mm): Segment of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(207.5600 mm, 120.6700 mm): Circle of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(208.1600 mm, 119.7700 mm): Segment of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(208.2600 mm, 121.3700 mm): Segment of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(208.3600 mm, 119.8700 mm): Segment of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.2846 mm, 120.8902 mm): Segment of LED4 on F.Silkscreen
+    @(208.4600 mm, 121.1700 mm): Segment of LED11 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(202.4809 mm, 88.9235 mm): Segment of LED5 on F.Silkscreen
+    @(200.8919 mm, 88.9886 mm): Reference field of LED5
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(202.5809 mm, 87.3235 mm): Segment of LED5 on F.Silkscreen
+    @(200.8919 mm, 88.9886 mm): Reference field of LED5
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(202.5809 mm, 88.9235 mm): Segment of LED5 on F.Silkscreen
+    @(200.8919 mm, 88.9886 mm): Reference field of LED5
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(202.7809 mm, 88.9235 mm): Segment of LED5 on F.Silkscreen
+    @(200.8919 mm, 88.9886 mm): Reference field of LED5
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(208.1600 mm, 85.7697 mm): Segment of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(208.2600 mm, 87.3697 mm): Segment of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(207.5600 mm, 86.7697 mm): Segment of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(207.5600 mm, 86.6697 mm): Circle of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(208.3600 mm, 85.8697 mm): Segment of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(208.4600 mm, 87.1697 mm): Segment of LED9 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+    @(205.1600 mm, 74.1697 mm): Rectangle of SW7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(183.1034 mm, 62.3825 mm): Reference field of LED6
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(187.0034 mm, 63.1375 mm): Segment of LED6 on F.Silkscreen
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.1875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(172.2600 mm, 63.7197 mm): Segment of LED18 on F.Silkscreen
+    @(179.1034 mm, 65.0875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(179.1034 mm, 65.0875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.4875 mm): Segment of LED6 on F.Silkscreen
+    @(172.2600 mm, 63.7197 mm): Segment of LED18 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.4875 mm): Segment of LED6 on F.Silkscreen
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(172.2600 mm, 63.7197 mm): Segment of LED18 on F.Silkscreen
+    @(179.3034 mm, 64.9875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(179.3034 mm, 64.9875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(172.2600 mm, 63.7197 mm): Segment of LED18 on F.Silkscreen
+    @(179.4034 mm, 63.6875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(172.2600 mm, 63.7197 mm): Segment of LED18 on F.Silkscreen
+    @(181.1034 mm, 63.6875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(179.4034 mm, 63.6875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.0875 mm): Segment of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.1875 mm): Circle of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.1875 mm): Circle of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.1875 mm): Circle of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+    @(178.5034 mm, 64.1875 mm): Circle of LED6 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(154.2600 mm, 110.0200 mm): Segment of LED25 on F.Silkscreen
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+    @(154.1600 mm, 109.7700 mm): Segment of LED25 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.1600 mm, 109.6700 mm): Segment of LED25 on F.Silkscreen
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(151.1600 mm, 62.4697 mm): Rectangle of SW10 on F.Silkscreen
+    @(156.3506 mm, 62.5560 mm): Circle of D31 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(156.3506 mm, 62.5560 mm): Circle of D31 on F.Silkscreen
+    @(151.1600 mm, 62.4697 mm): Rectangle of SW10 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(151.1600 mm, 62.4697 mm): Rectangle of SW10 on F.Silkscreen
+    @(156.3506 mm, 62.5560 mm): Circle of D31 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.0519 mm, 107.6803 mm): Reference field of LED3
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(145.1419 mm, 110.4606 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(145.1419 mm, 112.2106 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(145.3419 mm, 110.2606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(152.9419 mm, 108.5106 mm): Segment of LED3 on F.Silkscreen
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(151.3949 mm, 108.7749 mm): Segment of D23 on F.Silkscreen
+    @(152.9419 mm, 108.5106 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(152.9419 mm, 108.5106 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(152.9419 mm, 108.5106 mm): Segment of LED3 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(145.0419 mm, 108.7606 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 108.8606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 110.2606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(147.0419 mm, 110.3606 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(147.0419 mm, 110.3606 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 110.4606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(145.2419 mm, 108.9606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 108.7606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 108.9606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(147.0419 mm, 108.9606 mm): Segment of LED3 on F.Silkscreen
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+    @(147.0419 mm, 109.0606 mm): Segment of LED3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(150.1449 mm, 105.5749 mm): Segment of D23 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(150.1449 mm, 106.5749 mm): Segment of D23 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(151.1449 mm, 105.5749 mm): Segment of D23 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(146.5135 mm, 60.1008 mm): Reference field of LED7
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(150.3425 mm, 60.9357 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(141.8425 mm, 61.9857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(136.2600 mm, 61.5197 mm): Segment of LED26 on F.Silkscreen
+    @(142.4425 mm, 62.8857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(142.4425 mm, 62.8857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(136.2600 mm, 61.5197 mm): Segment of LED26 on F.Silkscreen
+    @(142.5425 mm, 61.2857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(142.5425 mm, 61.2857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(136.2600 mm, 61.5197 mm): Segment of LED26 on F.Silkscreen
+    @(142.6425 mm, 62.7857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(142.6425 mm, 62.7857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(136.2600 mm, 61.5197 mm): Segment of LED26 on F.Silkscreen
+    @(142.7425 mm, 61.4857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(144.4425 mm, 61.4857 mm): Segment of LED7 on F.Silkscreen
+    @(136.2600 mm, 61.5197 mm): Segment of LED26 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(142.7425 mm, 61.4857 mm): Segment of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(141.8425 mm, 61.8857 mm): Segment of LED7 on F.Silkscreen
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(141.8425 mm, 61.9857 mm): Circle of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(141.8425 mm, 61.9857 mm): Circle of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(141.8425 mm, 61.9857 mm): Circle of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+    @(141.8425 mm, 61.9857 mm): Circle of LED7 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(138.4072 mm, 82.0649 mm): Circle of D32 on F.Silkscreen
+    @(133.1600 mm, 81.9697 mm): Rectangle of SW17 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(138.4072 mm, 82.0649 mm): Circle of D32 on F.Silkscreen
+    @(133.1600 mm, 81.9697 mm): Rectangle of SW17 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.1600 mm, 81.9697 mm): Rectangle of SW17 on F.Silkscreen
+    @(138.4072 mm, 82.0649 mm): Circle of D32 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on F.Silkscreen
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.2877 mm, 70.3800 mm): PTH pad 16 [SCLK] of U1
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 62.7600 mm): PTH pad 19 [COL1] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 60.2200 mm): PTH pad 20 [COL0] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 72.9200 mm): PTH pad 15 [MISO] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(103.0800 mm, 75.0797 mm): Reference field of BACK_SIDE_ONLY_4
+    @(109.2877 mm, 75.4600 mm): PTH pad 14 [MOSI] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 75.4600 mm): PTH pad 14 [MOSI] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.2877 mm, 78.0000 mm): PTH pad 13 [NCS] of U1
+    @(111.8641 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 78.0000 mm): PTH pad 13 [NCS] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 65.3000 mm): PTH pad 18 [COL2] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 67.8400 mm): PTH pad 17 [COL3] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(103.0800 mm, 75.0797 mm): Reference field of BACK_SIDE_ONLY_4
+    @(96.5400 mm, 75.4897 mm): Footprint text of U1 (ROW4)
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.0477 mm, 78.0000 mm): PTH pad 12 [Net-(U1-Pad12)] of U1
+    @(96.6441 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 78.0000 mm): PTH pad 12 [Net-(U1-Pad12)] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(96.6441 mm, 47.5200 mm): Segment of U1 on F.Silkscreen
+    @(96.5400 mm, 75.4897 mm): Footprint text of U1 (ROW4)
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 75.4600 mm): PTH pad 11 [ROW4] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.0477 mm, 72.9200 mm): PTH pad 10 [ROW3] of U1
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 67.8400 mm): PTH pad 8 [ROW1] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.0477 mm, 70.3800 mm): PTH pad 9 [ROW2] of U1
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 57.6800 mm): PTH pad 21 [VCC] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.2877 mm, 50.0600 mm): PTH pad 24 [Net-(U1-Pad24)] of U1
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(109.2877 mm, 52.6000 mm): PTH pad 23 [GND] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(109.2877 mm, 55.1400 mm): PTH pad 22 [RESET] of U1
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 55.1400 mm): PTH pad 3 [GND] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 57.6800 mm): PTH pad 4 [GND] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 60.2200 mm): PTH pad 5 [SDA] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 52.6000 mm): PTH pad 2 [DATA] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.0477 mm, 50.0600 mm): PTH pad 1 [LED] of U1
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 62.7600 mm): PTH pad 6 [SCL] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+    @(94.0477 mm, 65.3000 mm): PTH pad 7 [ROW0] of U1
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 104.3713 mm): Segment of D24 on B.Silkscreen
+    @(127.2827 mm, 109.6182 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.2440 mm, 109.7713 mm): Segment of D24 on B.Silkscreen
+    @(127.2827 mm, 109.6182 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 109.7713 mm): Segment of D24 on B.Silkscreen
+    @(133.1827 mm, 109.8682 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(131.7440 mm, 109.7713 mm): Segment of D24 on B.Silkscreen
+    @(135.1827 mm, 109.8682 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.2440 mm, 109.7713 mm): Segment of D24 on B.Silkscreen
+    @(133.1827 mm, 109.8682 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on B.Silkscreen
+    @(119.9600 mm, 84.3697 mm): Polygon of SW18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on B.Silkscreen
+    @(119.9600 mm, 84.3697 mm): Polygon of SW18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(96.2601 mm, 83.5898 mm): Reference field of R1
+    @(96.2950 mm, 82.2647 mm): Segment of SW30 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(173.1700 mm, 110.1397 mm): Footprint text of LED21 (21)
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(172.2600 mm, 111.0200 mm): Segment of LED21 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.1809 mm, 87.5235 mm): Segment of LED5 on B.Silkscreen
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+    @(210.2809 mm, 88.8235 mm): Segment of LED5 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+    @(210.3809 mm, 87.3235 mm): Segment of LED5 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+    @(210.4809 mm, 88.9235 mm): Segment of LED5 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+    @(211.0809 mm, 87.9235 mm): Segment of LED5 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+    @(211.0809 mm, 88.0235 mm): Circle of LED5 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.0846 mm, 121.4402 mm): Segment of LED4 on B.Silkscreen
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(210.1846 mm, 122.7402 mm): Segment of LED4 on B.Silkscreen
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+    @(210.2846 mm, 121.2402 mm): Segment of LED4 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+    @(210.3846 mm, 122.8402 mm): Segment of LED4 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+    @(210.9846 mm, 121.8402 mm): Segment of LED4 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+    @(210.9846 mm, 121.9402 mm): Circle of LED4 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+    @(210.9846 mm, 121.9402 mm): Circle of LED4 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.1375 mm): Segment of LED6 on B.Silkscreen
+    @(178.1600 mm, 63.1697 mm): Segment of LED18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.1375 mm): Segment of LED6 on B.Silkscreen
+    @(179.8600 mm, 63.1697 mm): Segment of LED18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.1375 mm): Segment of LED6 on B.Silkscreen
+    @(179.9600 mm, 61.8697 mm): Segment of LED18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(179.2034 mm, 63.1375 mm): Segment of LED6 on B.Silkscreen
+    @(180.0600 mm, 63.3697 mm): Segment of LED18 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(180.1600 mm, 61.7697 mm): Segment of LED18 on B.Silkscreen
+    @(179.2034 mm, 63.1375 mm): Segment of LED6 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(151.0419 mm, 110.3606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(151.0419 mm, 110.3606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(152.7419 mm, 110.2606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(152.9419 mm, 110.4606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(153.0419 mm, 110.4606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(152.9419 mm, 108.8606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(145.1419 mm, 108.5106 mm): Segment of LED3 on B.Silkscreen
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(145.1419 mm, 108.5106 mm): Segment of LED3 on B.Silkscreen
+    @(151.3949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+    @(151.0419 mm, 108.7606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+    @(151.0419 mm, 108.8606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(151.0419 mm, 108.8606 mm): Segment of LED3 on B.Silkscreen
+    @(151.3949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+    @(151.0419 mm, 108.9606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(153.0419 mm, 108.7606 mm): Segment of LED3 on B.Silkscreen
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(153.0419 mm, 108.7606 mm): Segment of LED3 on B.Silkscreen
+    @(151.3949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(152.7419 mm, 110.4606 mm): Segment of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(133.2440 mm, 109.7713 mm): Segment of D24 on B.Silkscreen
+    @(135.1827 mm, 109.8682 mm): Segment of LED2 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(160.1600 mm, 109.6700 mm): Segment of LED25 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(160.1600 mm, 109.7700 mm): Segment of LED25 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(162.1600 mm, 109.7700 mm): Segment of LED25 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(160.1600 mm, 109.5700 mm): Segment of LED25 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(162.0600 mm, 110.0200 mm): Segment of LED25 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(153.6419 mm, 109.5606 mm): Circle of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(153.6419 mm, 109.5606 mm): Circle of LED3 on B.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+    @(153.6419 mm, 109.5606 mm): Circle of LED3 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(98.4841 mm, 81.5400 mm): PTH pad 1 [Net-(J1-Pad1)] of J1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(101.0241 mm, 81.5400 mm): PTH pad 2 [Net-(J1-Pad2)] of J1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(103.5641 mm, 81.5400 mm): PTH pad 3 [Net-(J1-Pad3)] of J1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.1041 mm, 81.5400 mm): PTH pad 4 [Net-(J1-Pad4)] of J1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(178.8210 mm, 141.4350 mm): Segment of J2 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(178.8210 mm, 141.4450 mm): Segment of J2 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(96.2041 mm, 94.8700 mm): NPTH pad of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(103.2041 mm, 94.8700 mm): NPTH pad of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(96.2041 mm, 93.1200 mm): NPTH pad of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(103.2041 mm, 93.1200 mm): NPTH pad of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.5041 mm, 95.2200 mm): PTH pad A [Net-(J13-PadA)] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.5041 mm, 92.7700 mm): PTH pad A [Net-(J13-PadA)] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(98.0041 mm, 96.9700 mm): PTH pad B [Net-(J13-PadB)] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(98.0041 mm, 91.0200 mm): PTH pad B [Net-(J13-PadB)] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(101.0041 mm, 96.9700 mm): PTH pad C [GND] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(101.0041 mm, 91.0200 mm): PTH pad C [GND] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.0041 mm, 96.9700 mm): PTH pad D [VCC] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(105.0041 mm, 91.0200 mm): PTH pad D [VCC] of J13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.7041 mm, 90.1200 mm): Segment of J13 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.7041 mm, 91.8700 mm): Segment of J13 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(103.0800 mm, 75.0797 mm): Reference field of BACK_SIDE_ONLY_4
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(145.1419 mm, 108.5106 mm): Segment of LED3 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(202.4846 mm, 120.8902 mm): Segment of LED4 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(202.5809 mm, 86.9735 mm): Segment of LED5 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.0875 mm): Segment of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.1875 mm): Segment of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.1875 mm): Circle of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.1875 mm): Circle of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.1875 mm): Circle of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.7034 mm, 64.1875 mm): Circle of LED6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.2600 mm, 100.1494 mm): Reference field of LED10
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.3700 mm, 117.2397 mm): Reference field of LED11
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(216.0600 mm, 121.7200 mm): Segment of LED11 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.2100 mm, 134.2297 mm): Reference field of LED12
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.3200 mm, 66.2597 mm): Reference field of LED13
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.2900 mm, 83.2197 mm): Reference field of LED14
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.2000 mm, 100.1994 mm): Reference field of LED15
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.2600 mm, 117.2497 mm): Reference field of LED16
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.1600 mm, 134.1797 mm): Reference field of LED17
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.2900 mm, 59.2497 mm): Reference field of LED18
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.2300 mm, 76.2297 mm): Reference field of LED19
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.3200 mm, 93.2197 mm): Reference field of LED20
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.2900 mm, 110.1797 mm): Reference field of LED21
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.2900 mm, 71.5397 mm): Reference field of LED23
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.1900 mm, 105.4297 mm): Reference field of LED25
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.4100 mm, 57.0697 mm): Reference field of LED26
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.3400 mm, 74.0597 mm): Reference field of LED27
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.3400 mm, 91.0397 mm): Reference field of LED28
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.3700 mm, 107.9997 mm): Reference field of LED29
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.4400 mm, 59.5997 mm): Reference field of LED30
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.3400 mm, 93.5497 mm): Reference field of LED32
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.2400 mm, 110.4597 mm): Reference field of LED33
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(100.6100 mm, 84.7697 mm): PTH pad 1 [Net-(J13-PadA)] of P1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(103.1100 mm, 84.7697 mm): PTH pad 1 [Net-(J13-PadB)] of P2
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 50.0600 mm): PTH pad 1 [LED] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 48.7900 mm): PTH pad 1 [LED] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 52.6000 mm): PTH pad 2 [DATA] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 51.3300 mm): PTH pad 2 [DATA] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 55.1400 mm): PTH pad 3 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 53.8700 mm): PTH pad 3 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 57.6800 mm): PTH pad 4 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 56.4100 mm): PTH pad 4 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 60.2200 mm): PTH pad 5 [SDA] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 58.9500 mm): PTH pad 5 [SDA] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 62.7600 mm): PTH pad 6 [SCL] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 61.4900 mm): PTH pad 6 [SCL] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 65.3000 mm): PTH pad 7 [ROW0] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 64.0300 mm): PTH pad 7 [ROW0] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 67.8400 mm): PTH pad 8 [ROW1] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 66.5700 mm): PTH pad 8 [ROW1] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 70.3800 mm): PTH pad 9 [ROW2] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 69.1100 mm): PTH pad 9 [ROW2] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 72.9200 mm): PTH pad 10 [ROW3] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 71.6500 mm): PTH pad 10 [ROW3] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 75.4600 mm): PTH pad 11 [ROW4] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 74.1900 mm): PTH pad 11 [ROW4] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.0477 mm, 78.0000 mm): PTH pad 12 [Net-(U1-Pad12)] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5941 mm, 76.7300 mm): PTH pad 12 [Net-(U1-Pad12)] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 76.7300 mm): PTH pad 13 [NCS] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 78.0000 mm): PTH pad 13 [NCS] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 74.1900 mm): PTH pad 14 [MOSI] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 75.4600 mm): PTH pad 14 [MOSI] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 71.6500 mm): PTH pad 15 [MISO] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 72.9200 mm): PTH pad 15 [MISO] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 69.1100 mm): PTH pad 16 [SCLK] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 70.3800 mm): PTH pad 16 [SCLK] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 66.5700 mm): PTH pad 17 [COL3] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 67.8400 mm): PTH pad 17 [COL3] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 64.0300 mm): PTH pad 18 [COL2] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 65.3000 mm): PTH pad 18 [COL2] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 61.4900 mm): PTH pad 19 [COL1] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 62.7600 mm): PTH pad 19 [COL1] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 58.9500 mm): PTH pad 20 [COL0] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 60.2200 mm): PTH pad 20 [COL0] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 56.4100 mm): PTH pad 21 [VCC] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 57.6800 mm): PTH pad 21 [VCC] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 53.8700 mm): PTH pad 22 [RESET] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 55.1400 mm): PTH pad 22 [RESET] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 51.3300 mm): PTH pad 23 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 52.6000 mm): PTH pad 23 [GND] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3741 mm, 48.7900 mm): PTH pad 24 [Net-(U1-Pad24)] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.2877 mm, 50.0600 mm): PTH pad 24 [Net-(U1-Pad24)] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.1041 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(96.6441 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(109.3241 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(111.8641 mm, 78.0000 mm): Segment of U1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(92.7777 mm, 48.7900 mm): Segment of U1 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.3177 mm, 48.7900 mm): Segment of U1 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.0177 mm, 48.7900 mm): Segment of U1 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(110.5577 mm, 48.7900 mm): Segment of U1 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.5450 mm, 82.0147 mm): PTH pad 1 [RESET] of SW30
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(94.5450 mm, 88.5147 mm): PTH pad 2 [GND] of SW30
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(96.2950 mm, 82.2647 mm): Segment of SW30 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(131.7440 mm, 104.3713 mm): Segment of D24 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.2440 mm, 104.3713 mm): Segment of D24 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.4506 mm, 62.1560 mm): Segment of D31 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.4506 mm, 60.6560 mm): Segment of D31 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.4506 mm, 62.1560 mm): Segment of D31 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(156.3506 mm, 62.5560 mm): Circle of D31 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(156.3506 mm, 62.5560 mm): Circle of D31 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5072 mm, 81.6649 mm): Segment of D32 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5072 mm, 80.1649 mm): Segment of D32 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.5072 mm, 81.6649 mm): Segment of D32 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(138.4072 mm, 82.0649 mm): Circle of D32 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.5450 mm, 84.1541 mm): Segment of D33 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.5450 mm, 82.6541 mm): Segment of D33 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.5450 mm, 84.1541 mm): Segment of D33 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(120.4450 mm, 84.5541 mm): Circle of D33 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(169.1600 mm, 84.1697 mm): Rectangle of SW15 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.9600 mm, 84.0697 mm): Polygon of SW15 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.1600 mm, 84.4697 mm): Rectangle of SW18 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.9600 mm, 84.3697 mm): Polygon of SW18 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(96.1100 mm, 105.9700 mm): Rectangle of SW25 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(100.9100 mm, 105.8700 mm): Polygon of SW25 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(169.1600 mm, 101.1700 mm): Rectangle of SW21 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.9600 mm, 101.0700 mm): Polygon of SW21 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(169.1600 mm, 67.1697 mm): Rectangle of SW9 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.9600 mm, 67.0697 mm): Polygon of SW9 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(205.1600 mm, 91.1697 mm): Rectangle of SW13 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.9600 mm, 91.0697 mm): Polygon of SW13 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.1600 mm, 45.4697 mm): Rectangle of SW4 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.9600 mm, 45.3697 mm): Polygon of SW4 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(205.1600 mm, 125.1700 mm): Rectangle of SW26 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.9600 mm, 125.0700 mm): Polygon of SW26 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.1600 mm, 62.4697 mm): Rectangle of SW10 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.9600 mm, 62.3697 mm): Polygon of SW10 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.1600 mm, 98.9700 mm): Rectangle of SW23 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.9600 mm, 98.8700 mm): Polygon of SW23 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.1600 mm, 91.1697 mm): Rectangle of SW14 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.9600 mm, 91.0697 mm): Polygon of SW14 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.1600 mm, 67.4697 mm): Rectangle of SW12 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.9600 mm, 67.3697 mm): Polygon of SW12 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.5612 mm, 139.6951 mm): Polygon of SW28 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.8515 mm, 140.6271 mm): Polygon of SW28 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(205.1600 mm, 108.1700 mm): Rectangle of SW19 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.9600 mm, 108.0700 mm): Polygon of SW19 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(205.1600 mm, 57.1697 mm): Rectangle of SW1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.9600 mm, 57.0697 mm): Polygon of SW1 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.1600 mm, 50.4697 mm): Rectangle of SW6 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.9600 mm, 50.3697 mm): Polygon of SW6 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(173.9600 mm, 50.0697 mm): Polygon of SW3 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.1600 mm, 125.1700 mm): Rectangle of SW27 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.9600 mm, 125.0700 mm): Polygon of SW27 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.1600 mm, 79.4697 mm): Rectangle of SW16 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.9600 mm, 79.3697 mm): Polygon of SW16 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.1600 mm, 57.1697 mm): Rectangle of SW2 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.9600 mm, 57.0697 mm): Polygon of SW2 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.1600 mm, 64.9697 mm): Rectangle of SW11 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.9600 mm, 64.8697 mm): Polygon of SW11 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.1600 mm, 108.1700 mm): Rectangle of SW20 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.9600 mm, 108.0700 mm): Polygon of SW20 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.1600 mm, 81.9697 mm): Rectangle of SW17 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.9600 mm, 81.8697 mm): Polygon of SW17 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(151.1600 mm, 96.4700 mm): Rectangle of SW22 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(155.9600 mm, 96.3700 mm): Polygon of SW22 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(115.1600 mm, 101.4700 mm): Rectangle of SW24 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(119.9600 mm, 101.3700 mm): Polygon of SW24 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.5045 mm, 143.7177 mm): Polygon of SW29 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(95.0282 mm, 145.4534 mm): Polygon of SW29 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(187.1600 mm, 74.1697 mm): Rectangle of SW8 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(191.9600 mm, 74.0697 mm): Polygon of SW8 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(137.9600 mm, 47.8697 mm): Polygon of SW5 on B.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(205.1600 mm, 74.1697 mm): Rectangle of SW7 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(209.9600 mm, 74.0697 mm): Polygon of SW7 on B.Silkscreen
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.5400 mm, 60.2597 mm): Footprint text of U1 (SDA)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9200 mm, 75.5797 mm): Footprint text of U1 (MOSI)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.6600 mm, 52.6597 mm): Footprint text of U1 (DATA)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.8700 mm, 65.3397 mm): Footprint text of U1 (ROW0)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.5877 mm, 57.7680 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9900 mm, 65.3697 mm): Footprint text of U1 (COL2)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.8500 mm, 70.4597 mm): Footprint text of U1 (ROW2)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.5100 mm, 62.8397 mm): Footprint text of U1 (SCL)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7400 mm, 55.2497 mm): Footprint text of U1 (RST)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.8100 mm, 52.6597 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(113.0000 mm, 70.4997 mm): Footprint text of U1 (SCLK)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7600 mm, 49.9997 mm): Footprint text of U1 (RAW)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.3100 mm, 77.9997 mm): Footprint text of U1 (NC)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.8800 mm, 73.0097 mm): Footprint text of U1 (ROW3)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7700 mm, 78.0197 mm): Footprint text of U1 (NCS)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.8000 mm, 57.7297 mm): Footprint text of U1 (VCC)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9900 mm, 60.3097 mm): Footprint text of U1 (COL0)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(95.9200 mm, 50.0997 mm): Footprint text of U1 (LED)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9900 mm, 62.7897 mm): Footprint text of U1 (COL1)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.8400 mm, 67.8397 mm): Footprint text of U1 (ROW1)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.6000 mm, 55.3097 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9900 mm, 67.8997 mm): Footprint text of U1 (COL3)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.9400 mm, 72.9797 mm): Footprint text of U1 (MISO)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(96.5400 mm, 75.4897 mm): Footprint text of U1 (ROW4)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7800 mm, 64.1597 mm): Footprint text of U1 (ROW0)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7800 mm, 71.6897 mm): Footprint text of U1 (ROW3)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.2000 mm, 53.9797 mm): Footprint text of U1 (RST)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7800 mm, 66.6097 mm): Footprint text of U1 (ROW1)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7800 mm, 74.2497 mm): Footprint text of U1 (ROW4)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4100 mm, 71.7297 mm): Footprint text of U1 (MISO)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.5100 mm, 59.0397 mm): Footprint text of U1 (COL0)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.5300 mm, 56.4597 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4500 mm, 69.1697 mm): Footprint text of U1 (SCLK)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4300 mm, 61.5497 mm): Footprint text of U1 (COL1)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.4200 mm, 48.8297 mm): Footprint text of U1 (LED)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.1500 mm, 52.1497 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.5300 mm, 53.8697 mm): Footprint text of U1 (GND)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.4700 mm, 61.5197 mm): Footprint text of U1 (SCL)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.5000 mm, 58.9897 mm): Footprint text of U1 (SDA)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.2900 mm, 76.8197 mm): Footprint text of U1 (NCS)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(95.3500 mm, 47.2597 mm): Footprint text of U1 (RAW)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.7800 mm, 69.1697 mm): Footprint text of U1 (ROW2)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.3400 mm, 76.7397 mm): Footprint text of U1 (NC)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4100 mm, 73.5997 mm): Footprint text of U1 (MOSI)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.2300 mm, 56.4797 mm): Footprint text of U1 (VCC)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4100 mm, 64.1197 mm): Footprint text of U1 (COL2)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(97.4500 mm, 66.6497 mm): Footprint text of U1 (COL3)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(112.6400 mm, 51.3697 mm): Footprint text of U1 (DATA)
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(98.4841 mm, 81.5400 mm): Footprint J1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'mylibrary'.
+    Local override; warning
+    @(178.4710 mm, 132.5450 mm): Footprint J2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'MountingHole'.
+    Local override; warning
+    @(109.1890 mm, 100.2947 mm): Footprint J3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'MountingHole'.
+    Local override; warning
+    @(95.1891 mm, 100.2947 mm): Footprint J4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'Lily58-footprint'.
+    Local override; warning
+    @(94.7041 mm, 93.1200 mm): Footprint J13
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 131.6694 mm): Footprint JP1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(99.3100 mm, 77.0697 mm): Footprint JP2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 133.7694 mm): Footprint JP3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(101.4100 mm, 77.0697 mm): Footprint JP4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 135.8694 mm): Footprint BACK_SIDE_ONLY_2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.5100 mm, 77.0697 mm): Footprint BACK_SIDE_ONLY_4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 137.9694 mm): Footprint JP7
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(105.6000 mm, 77.0697 mm): Footprint JP8
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(109.5100 mm, 90.0697 mm): Footprint LEFT
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(110.2100 mm, 95.8697 mm): Footprint LED
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(102.2100 mm, 124.5700 mm): Footprint LED1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(131.1827 mm, 111.4682 mm): Footprint LED2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(149.0419 mm, 110.3606 mm): Footprint LED3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(206.3846 mm, 122.7402 mm): Footprint LED4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(206.4809 mm, 88.8235 mm): Footprint LED5
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(183.1034 mm, 64.9875 mm): Footprint LED6
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(146.4425 mm, 62.7857 mm): Footprint LED7
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(212.1600 mm, 68.8697 mm): Footprint LED8
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(212.1600 mm, 85.8697 mm): Footprint LED9
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(212.1600 mm, 102.8697 mm): Footprint LED10
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(212.1600 mm, 119.8700 mm): Footprint LED11
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(212.1600 mm, 136.8700 mm): Footprint LED12
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(194.1600 mm, 68.8697 mm): Footprint LED13
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(194.1600 mm, 85.8697 mm): Footprint LED14
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(194.1600 mm, 102.8697 mm): Footprint LED15
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(194.1600 mm, 119.8700 mm): Footprint LED16
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(194.1600 mm, 136.8700 mm): Footprint LED17
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(176.1600 mm, 61.8697 mm): Footprint LED18
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(176.1600 mm, 78.8697 mm): Footprint LED19
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(176.1600 mm, 95.8697 mm): Footprint LED20
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(176.1600 mm, 112.8700 mm): Footprint LED21
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(158.1600 mm, 57.1697 mm): Footprint LED22
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(158.1600 mm, 74.1697 mm): Footprint LED23
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(158.1600 mm, 91.1697 mm): Footprint LED24
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(158.1600 mm, 108.1700 mm): Footprint LED25
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(140.1600 mm, 59.6697 mm): Footprint LED26
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(140.1600 mm, 76.6697 mm): Footprint LED27
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(140.1600 mm, 93.6697 mm): Footprint LED28
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(140.1600 mm, 110.6700 mm): Footprint LED29
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(122.1600 mm, 62.1697 mm): Footprint LED30
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(122.1600 mm, 79.1697 mm): Footprint LED31
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(122.1600 mm, 96.1697 mm): Footprint LED32
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(122.1600 mm, 113.1700 mm): Footprint LED33
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.1100 mm, 117.6700 mm): Footprint LED34
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(100.6100 mm, 84.7697 mm): Footprint P1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.1100 mm, 84.7697 mm): Footprint P2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(102.9377 mm, 63.2680 mm): Footprint U1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(94.5450 mm, 85.2647 mm): Footprint SW30
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(220.1600 mm, 65.7697 mm): Footprint D1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(202.1600 mm, 65.7697 mm): Footprint D2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(184.1600 mm, 58.7697 mm): Footprint D3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(166.1600 mm, 54.0697 mm): Footprint D4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(148.1600 mm, 56.5697 mm): Footprint D5
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(130.1600 mm, 59.0697 mm): Footprint D6
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(220.1600 mm, 82.7697 mm): Footprint D7
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(202.1600 mm, 82.7697 mm): Footprint D8
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(184.1600 mm, 75.7697 mm): Footprint D9
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(166.1600 mm, 71.0697 mm): Footprint D10
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(148.1600 mm, 73.5697 mm): Footprint D11
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(130.1600 mm, 76.0697 mm): Footprint D12
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(220.1600 mm, 99.7697 mm): Footprint D13
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(202.1600 mm, 99.7697 mm): Footprint D14
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(184.1600 mm, 92.7697 mm): Footprint D15
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(166.1600 mm, 88.0697 mm): Footprint D16
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(148.1600 mm, 90.5697 mm): Footprint D17
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(130.1600 mm, 93.0697 mm): Footprint D18
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(220.1600 mm, 116.7700 mm): Footprint D19
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(202.1600 mm, 116.7700 mm): Footprint D20
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(184.1600 mm, 109.7700 mm): Footprint D21
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(166.1600 mm, 105.0700 mm): Footprint D22
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(150.6449 mm, 106.0749 mm): Footprint D23
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(132.4940 mm, 107.0713 mm): Footprint D24
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(111.1100 mm, 114.5700 mm): Footprint D25
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(220.1600 mm, 133.7700 mm): Footprint D26
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(202.1600 mm, 133.7700 mm): Footprint D27
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.2957 mm, 133.8305 mm): Footprint D28
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(82.4677 mm, 140.7667 mm): Footprint D29
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(108.0100 mm, 84.5697 mm): Footprint D30
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(158.1506 mm, 61.4060 mm): Footprint D31
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(140.2072 mm, 80.9149 mm): Footprint D32
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(122.2450 mm, 83.4041 mm): Footprint D33
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(108.0100 mm, 87.0997 mm): Footprint D34
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.2300 mm, 62.6097 mm): Footprint GXXX_2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(176.1600 mm, 91.1697 mm): Footprint SW15
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(167.1050 mm, 94.0140 mm): Footprint MH12
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(131.3650 mm, 97.7007 mm): Footprint MH7
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(122.1600 mm, 91.4697 mm): Footprint SW18
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(103.1100 mm, 112.9700 mm): Footprint SW25
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(176.1600 mm, 108.1700 mm): Footprint SW21
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(176.1600 mm, 74.1697 mm): Footprint SW9
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(212.1600 mm, 98.1697 mm): Footprint SW13
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(158.1600 mm, 52.4697 mm): Footprint SW4
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(131.3550 mm, 63.6888 mm): Footprint MH6
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(212.1600 mm, 132.1700 mm): Footprint SW26
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(158.1600 mm, 69.4697 mm): Footprint SW10
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(140.1600 mm, 105.9700 mm): Footprint SW23
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(194.1600 mm, 98.1697 mm): Footprint SW14
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(167.1150 mm, 60.0255 mm): Footprint MH5
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(122.1600 mm, 74.4697 mm): Footprint SW12
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(111.4520 mm, 134.0170 mm): Footprint SW28
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(212.1600 mm, 115.1700 mm): Footprint SW19
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(212.1600 mm, 64.1697 mm): Footprint SW1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(122.1600 mm, 57.4697 mm): Footprint SW6
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(176.1600 mm, 57.1697 mm): Footprint SW3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(194.1600 mm, 132.1700 mm): Footprint SW27
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(158.1600 mm, 86.4697 mm): Footprint SW16
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(194.1600 mm, 64.1697 mm): Footprint SW2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(140.1600 mm, 71.9697 mm): Footprint SW11
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(194.1600 mm, 115.1700 mm): Footprint SW20
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(140.1600 mm, 88.9697 mm): Footprint SW17
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(203.1600 mm, 71.6697 mm): Footprint MH9
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(98.6890 mm, 130.7580 mm): Footprint MH11
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(158.1600 mm, 103.4700 mm): Footprint SW22
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(93.7751 mm, 125.9550 mm): Footprint MH8
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(122.1600 mm, 108.4700 mm): Footprint SW24
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(90.5325 mm, 139.5340 mm): Footprint SW29
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(194.1600 mm, 81.1697 mm): Footprint SW8
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(140.1600 mm, 54.9697 mm): Footprint SW5
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball61_choc'.
+    Local override; warning
+    @(212.1600 mm, 81.1697 mm): Footprint SW7
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 131.6694 mm): Footprint JP10
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(99.3100 mm, 77.0697 mm): Footprint JP11
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 133.7694 mm): Footprint JP12
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(101.4100 mm, 77.0697 mm): Footprint JP13
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 135.8694 mm): Footprint BACK_SIDE_ONLY
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.5100 mm, 77.0697 mm): Footprint JP15
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(182.3100 mm, 137.9694 mm): Footprint JP16
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(105.6100 mm, 77.0697 mm): Footprint BACK_SIDE_ONLY_3
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(100.7100 mm, 88.3697 mm): Footprint JP18
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(109.9100 mm, 45.7697 mm): Footprint JP20
+[lib_footprint_issues]: The current configuration does not include the footprint library 'Resistor_SMD'.
+    Local override; warning
+    @(96.2301 mm, 85.6898 mm): Footprint R1
+[lib_footprint_issues]: The current configuration does not include the footprint library 'Resistor_SMD'.
+    Local override; warning
+    @(98.2100 mm, 87.6697 mm): Footprint R2
+[lib_footprint_issues]: The current configuration does not include the footprint library 'keyball_right'.
+    Local override; warning
+    @(103.0700 mm, 63.6997 mm): Footprint GXXX
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(156.3600 mm, 109.7200 mm): Segment of LED25 on Edge.Cuts
+    @(162.4876 mm, 110.6624 mm): PCB text 'Keyball61 Choc v0.1' on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(150.8419 mm, 111.9106 mm): Segment of LED3 on Edge.Cuts
+    @(162.4025 mm, 110.6267 mm): PCB text 'Keyball61 Choc v0.1' on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 118.3200 mm): Segment of LED11 on Edge.Cuts
+    @(210.3846 mm, 121.1402 mm): Segment of LED4 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 118.3200 mm): Segment of LED11 on Edge.Cuts
+    @(210.3846 mm, 122.8402 mm): Segment of LED4 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 84.3197 mm): Segment of LED9 on Edge.Cuts
+    @(210.3809 mm, 86.9735 mm): Segment of LED5 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 84.3197 mm): Segment of LED9 on Edge.Cuts
+    @(202.5809 mm, 86.9735 mm): Segment of LED5 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 84.3197 mm): Segment of LED9 on Edge.Cuts
+    @(208.4809 mm, 87.3235 mm): Segment of LED5 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 84.3197 mm): Segment of LED9 on Edge.Cuts
+    @(210.3809 mm, 87.3235 mm): Segment of LED5 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 84.3197 mm): Segment of LED9 on Edge.Cuts
+    @(210.4809 mm, 87.2235 mm): Segment of LED5 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(210.3600 mm, 87.4197 mm): Segment of LED9 on Edge.Cuts
+    @(210.4809 mm, 88.9235 mm): Segment of LED5 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 87.2735 mm): Segment of LED5 on Edge.Cuts
+    @(208.1600 mm, 85.7697 mm): Segment of LED9 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(208.1600 mm, 87.4697 mm): Segment of LED9 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(208.2600 mm, 87.3697 mm): Segment of LED9 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(208.2600 mm, 87.7197 mm): Segment of LED9 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(210.1600 mm, 87.3697 mm): Segment of LED9 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(216.0600 mm, 87.7197 mm): Segment of LED9 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.1846 mm, 124.2902 mm): Segment of LED4 on Edge.Cuts
+    @(208.1600 mm, 119.7700 mm): Segment of LED11 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.1846 mm, 124.2902 mm): Segment of LED4 on Edge.Cuts
+    @(208.1600 mm, 121.4700 mm): Segment of LED11 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 67.5697 mm): Circle of D1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 67.5697 mm): Circle of D1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 67.5697 mm): Circle of D1 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 67.5697 mm): Circle of D1 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 84.5697 mm): Circle of D7 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 84.5697 mm): Circle of D7 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 84.5697 mm): Circle of D7 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 84.5697 mm): Circle of D7 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 101.5697 mm): Circle of D13 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 101.5697 mm): Circle of D13 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 101.5697 mm): Circle of D13 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 101.5697 mm): Circle of D13 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 118.5700 mm): Circle of D19 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 118.5700 mm): Circle of D19 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 118.5700 mm): Circle of D19 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 118.5700 mm): Circle of D19 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(150.8419 mm, 108.8106 mm): Segment of LED3 on Edge.Cuts
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(150.8419 mm, 108.8106 mm): Segment of LED3 on Edge.Cuts
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(150.8419 mm, 108.8106 mm): Segment of LED3 on Edge.Cuts
+    @(149.8949 mm, 103.3749 mm): Segment of D23 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(150.8419 mm, 108.8106 mm): Segment of LED3 on Edge.Cuts
+    @(149.8949 mm, 108.7749 mm): Segment of D23 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 135.5700 mm): Circle of D26 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 135.5700 mm): Circle of D26 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 135.5700 mm): Circle of D26 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(221.3100 mm, 135.5700 mm): Circle of D26 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(80.7714 mm, 139.4685 mm): Circle of D29 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(80.7714 mm, 139.4685 mm): Circle of D29 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(80.7714 mm, 139.4685 mm): Circle of D29 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(80.7714 mm, 139.4685 mm): Circle of D29 on B.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.1846 mm, 124.2902 mm): Segment of LED4 on Edge.Cuts
+    @(205.1600 mm, 108.1700 mm): Rectangle of SW19 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(181.3034 mm, 63.4375 mm): Segment of LED6 on Edge.Cuts
+    @(169.1600 mm, 50.1697 mm): Rectangle of SW3 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(148.2425 mm, 61.2357 mm): Segment of LED7 on Edge.Cuts
+    @(133.1600 mm, 47.9697 mm): Rectangle of SW5 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(208.2809 mm, 90.3735 mm): Segment of LED5 on Edge.Cuts
+    @(205.1600 mm, 74.1697 mm): Rectangle of SW7 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(79.9032 mm, 133.7978 mm): Polygon on Edge.Cuts
+    @(110.6800 mm, 44.1897 mm): Value field of JP20 (LED CUT)
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
